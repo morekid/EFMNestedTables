@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B722646159A1DE3001B28C5 /* EFMGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B72263F159A1DE3001B28C5 /* EFMGroupCell.m */; };
+		8B722647159A1DE3001B28C5 /* EFMNestedTables.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B722641159A1DE3001B28C5 /* EFMNestedTables.m */; };
+		8B722648159A1DE3001B28C5 /* EFMSelectableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B722643159A1DE3001B28C5 /* EFMSelectableCell.m */; };
+		8B722649159A1DE3001B28C5 /* EFMSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B722645159A1DE3001B28C5 /* EFMSubCell.m */; };
+		8B72264F159A1DF0001B28C5 /* EFMGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B72264C159A1DF0001B28C5 /* EFMGroupCell.xib */; };
+		8B722650159A1DF0001B28C5 /* EFMNestedTables.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B72264D159A1DF0001B28C5 /* EFMNestedTables.xib */; };
+		8B722651159A1DF0001B28C5 /* EFMSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B72264E159A1DF0001B28C5 /* EFMSubCell.xib */; };
+		8B72265E159A1E01001B28C5 /* blueLedBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722653159A1E01001B28C5 /* blueLedBig.png */; };
+		8B72265F159A1E01001B28C5 /* blueLedBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722654159A1E01001B28C5 /* blueLedBig@2x.png */; };
+		8B722660159A1E01001B28C5 /* blueLedBigOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722655159A1E01001B28C5 /* blueLedBigOff.png */; };
+		8B722661159A1E01001B28C5 /* blueLedBigOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722656159A1E01001B28C5 /* blueLedBigOff@2x.png */; };
+		8B722662159A1E01001B28C5 /* blueLedSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722657159A1E01001B28C5 /* blueLedSmall.png */; };
+		8B722663159A1E01001B28C5 /* blueLedSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722658159A1E01001B28C5 /* blueLedSmall@2x.png */; };
+		8B722664159A1E01001B28C5 /* blueLedSmallOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722659159A1E01001B28C5 /* blueLedSmallOff.png */; };
+		8B722665159A1E01001B28C5 /* blueLedSmallOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265A159A1E01001B28C5 /* blueLedSmallOff@2x.png */; };
+		8B722666159A1E01001B28C5 /* cellSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265B159A1E01001B28C5 /* cellSelected.png */; };
+		8B722667159A1E01001B28C5 /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265C159A1E01001B28C5 /* disclosure.png */; };
+		8B722668159A1E01001B28C5 /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265D159A1E01001B28C5 /* disclosure@2x.png */; };
+		8B72266D159A1E30001B28C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B8EB7EE156A74B00061CF0C /* InfoPlist.strings */; };
+		8B72266F159A1E34001B28C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B72266E159A1E34001B28C5 /* main.m */; };
+		8B722673159A1E4B001B28C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B722671159A1E4B001B28C5 /* InfoPlist.strings */; };
+		8B722689159A1FFF001B28C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B72266A159A1E0E001B28C5 /* AppDelegate.m */; };
+		8B8EB7E6156A74B00061CF0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8EB7E5156A74B00061CF0C /* UIKit.framework */; };
+		8B8EB7E8156A74B00061CF0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8EB7E7156A74B00061CF0C /* Foundation.framework */; };
+		8B8EB7EA156A74B00061CF0C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8EB7E9156A74B00061CF0C /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8B72263E159A1DE3001B28C5 /* EFMGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFMGroupCell.h; sourceTree = "<group>"; };
+		8B72263F159A1DE3001B28C5 /* EFMGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFMGroupCell.m; sourceTree = "<group>"; };
+		8B722640159A1DE3001B28C5 /* EFMNestedTables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFMNestedTables.h; sourceTree = "<group>"; };
+		8B722641159A1DE3001B28C5 /* EFMNestedTables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFMNestedTables.m; sourceTree = "<group>"; };
+		8B722642159A1DE3001B28C5 /* EFMSelectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFMSelectableCell.h; sourceTree = "<group>"; };
+		8B722643159A1DE3001B28C5 /* EFMSelectableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFMSelectableCell.m; sourceTree = "<group>"; };
+		8B722644159A1DE3001B28C5 /* EFMSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFMSubCell.h; sourceTree = "<group>"; };
+		8B722645159A1DE3001B28C5 /* EFMSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFMSubCell.m; sourceTree = "<group>"; };
+		8B72264C159A1DF0001B28C5 /* EFMGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFMGroupCell.xib; sourceTree = "<group>"; };
+		8B72264D159A1DF0001B28C5 /* EFMNestedTables.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFMNestedTables.xib; sourceTree = "<group>"; };
+		8B72264E159A1DF0001B28C5 /* EFMSubCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFMSubCell.xib; sourceTree = "<group>"; };
+		8B722653159A1E01001B28C5 /* blueLedBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedBig.png; sourceTree = "<group>"; };
+		8B722654159A1E01001B28C5 /* blueLedBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedBig@2x.png"; sourceTree = "<group>"; };
+		8B722655159A1E01001B28C5 /* blueLedBigOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedBigOff.png; sourceTree = "<group>"; };
+		8B722656159A1E01001B28C5 /* blueLedBigOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedBigOff@2x.png"; sourceTree = "<group>"; };
+		8B722657159A1E01001B28C5 /* blueLedSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedSmall.png; sourceTree = "<group>"; };
+		8B722658159A1E01001B28C5 /* blueLedSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedSmall@2x.png"; sourceTree = "<group>"; };
+		8B722659159A1E01001B28C5 /* blueLedSmallOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedSmallOff.png; sourceTree = "<group>"; };
+		8B72265A159A1E01001B28C5 /* blueLedSmallOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedSmallOff@2x.png"; sourceTree = "<group>"; };
+		8B72265B159A1E01001B28C5 /* cellSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellSelected.png; sourceTree = "<group>"; };
+		8B72265C159A1E01001B28C5 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		8B72265D159A1E01001B28C5 /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
+		8B722669159A1E0E001B28C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "EFMNestedTablesExample/Default Images/AppDelegate.h"; sourceTree = "<group>"; };
+		8B72266A159A1E0E001B28C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "EFMNestedTablesExample/Default Images/AppDelegate.m"; sourceTree = "<group>"; };
+		8B72266B159A1E28001B28C5 /* EFMNestedTables-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EFMNestedTables-Info.plist"; path = "EFMNestedTablesExample/EFMNestedTables-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8B72266C159A1E28001B28C5 /* EFMNestedTables-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EFMNestedTables-Prefix.pch"; path = "EFMNestedTablesExample/EFMNestedTables-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		8B72266E159A1E34001B28C5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EFMNestedTablesExample/main.m; sourceTree = SOURCE_ROOT; };
+		8B722672159A1E4B001B28C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = EFMNestedTablesExample/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		8B8EB7E1156A74B00061CF0C /* EFMNestedTablesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EFMNestedTablesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8EB7E5156A74B00061CF0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8B8EB7E7156A74B00061CF0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8B8EB7E9156A74B00061CF0C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B8EB7DE156A74B00061CF0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8EB7E6156A74B00061CF0C /* UIKit.framework in Frameworks */,
+				8B8EB7E8156A74B00061CF0C /* Foundation.framework in Frameworks */,
+				8B8EB7EA156A74B00061CF0C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B72263D159A1DE3001B28C5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8B72263E159A1DE3001B28C5 /* EFMGroupCell.h */,
+				8B72263F159A1DE3001B28C5 /* EFMGroupCell.m */,
+				8B722640159A1DE3001B28C5 /* EFMNestedTables.h */,
+				8B722641159A1DE3001B28C5 /* EFMNestedTables.m */,
+				8B722642159A1DE3001B28C5 /* EFMSelectableCell.h */,
+				8B722643159A1DE3001B28C5 /* EFMSelectableCell.m */,
+				8B722644159A1DE3001B28C5 /* EFMSubCell.h */,
+				8B722645159A1DE3001B28C5 /* EFMSubCell.m */,
+			);
+			name = Classes;
+			path = EFMNestedTablesExample/Classes;
+			sourceTree = "<group>";
+		};
+		8B72264B159A1DF0001B28C5 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				8B72264C159A1DF0001B28C5 /* EFMGroupCell.xib */,
+				8B72264D159A1DF0001B28C5 /* EFMNestedTables.xib */,
+				8B72264E159A1DF0001B28C5 /* EFMSubCell.xib */,
+			);
+			name = Nibs;
+			path = EFMNestedTablesExample/Nibs;
+			sourceTree = "<group>";
+		};
+		8B722652159A1E01001B28C5 /* Default Images */ = {
+			isa = PBXGroup;
+			children = (
+				8B722653159A1E01001B28C5 /* blueLedBig.png */,
+				8B722654159A1E01001B28C5 /* blueLedBig@2x.png */,
+				8B722655159A1E01001B28C5 /* blueLedBigOff.png */,
+				8B722656159A1E01001B28C5 /* blueLedBigOff@2x.png */,
+				8B722657159A1E01001B28C5 /* blueLedSmall.png */,
+				8B722658159A1E01001B28C5 /* blueLedSmall@2x.png */,
+				8B722659159A1E01001B28C5 /* blueLedSmallOff.png */,
+				8B72265A159A1E01001B28C5 /* blueLedSmallOff@2x.png */,
+				8B72265B159A1E01001B28C5 /* cellSelected.png */,
+				8B72265C159A1E01001B28C5 /* disclosure.png */,
+				8B72265D159A1E01001B28C5 /* disclosure@2x.png */,
+			);
+			name = "Default Images";
+			path = "EFMNestedTablesExample/Default Images";
+			sourceTree = "<group>";
+		};
+		8B8EB7D6156A74AF0061CF0C = {
+			isa = PBXGroup;
+			children = (
+				8BB989EA1599D4DC0028D9F7 /* EFMNestedTables */,
+				8B8EB7EC156A74B00061CF0C /* Supporting Files */,
+				8B8EB7E4156A74B00061CF0C /* Frameworks */,
+				8B8EB7E2156A74B00061CF0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B8EB7E2156A74B00061CF0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B8EB7E1156A74B00061CF0C /* EFMNestedTablesExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B8EB7E4156A74B00061CF0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B8EB7E5156A74B00061CF0C /* UIKit.framework */,
+				8B8EB7E7156A74B00061CF0C /* Foundation.framework */,
+				8B8EB7E9156A74B00061CF0C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B8EB7EC156A74B00061CF0C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B72266E159A1E34001B28C5 /* main.m */,
+				8B72266B159A1E28001B28C5 /* EFMNestedTables-Info.plist */,
+				8B72266C159A1E28001B28C5 /* EFMNestedTables-Prefix.pch */,
+				8B722671159A1E4B001B28C5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			path = nestedTables;
+			sourceTree = "<group>";
+		};
+		8BB989EA1599D4DC0028D9F7 /* EFMNestedTables */ = {
+			isa = PBXGroup;
+			children = (
+				8B72263D159A1DE3001B28C5 /* Classes */,
+				8B72264B159A1DF0001B28C5 /* Nibs */,
+				8B722652159A1E01001B28C5 /* Default Images */,
+				8B722669159A1E0E001B28C5 /* AppDelegate.h */,
+				8B72266A159A1E0E001B28C5 /* AppDelegate.m */,
+			);
+			name = EFMNestedTables;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B8EB7E0156A74B00061CF0C /* EFMNestedTablesExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B8EB7FF156A74B00061CF0C /* Build configuration list for PBXNativeTarget "EFMNestedTablesExample" */;
+			buildPhases = (
+				8B8EB7DD156A74B00061CF0C /* Sources */,
+				8B8EB7DE156A74B00061CF0C /* Frameworks */,
+				8B8EB7DF156A74B00061CF0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EFMNestedTablesExample;
+			productName = nestedTables;
+			productReference = 8B8EB7E1156A74B00061CF0C /* EFMNestedTablesExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B8EB7D8156A74B00061CF0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 8B8EB7DB156A74B00061CF0C /* Build configuration list for PBXProject "EFMNestedTablesExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8B8EB7D6156A74AF0061CF0C;
+			productRefGroup = 8B8EB7E2156A74B00061CF0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B8EB7E0156A74B00061CF0C /* EFMNestedTablesExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B8EB7DF156A74B00061CF0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B72264F159A1DF0001B28C5 /* EFMGroupCell.xib in Resources */,
+				8B722650159A1DF0001B28C5 /* EFMNestedTables.xib in Resources */,
+				8B722651159A1DF0001B28C5 /* EFMSubCell.xib in Resources */,
+				8B72265E159A1E01001B28C5 /* blueLedBig.png in Resources */,
+				8B72265F159A1E01001B28C5 /* blueLedBig@2x.png in Resources */,
+				8B722660159A1E01001B28C5 /* blueLedBigOff.png in Resources */,
+				8B722661159A1E01001B28C5 /* blueLedBigOff@2x.png in Resources */,
+				8B722662159A1E01001B28C5 /* blueLedSmall.png in Resources */,
+				8B722663159A1E01001B28C5 /* blueLedSmall@2x.png in Resources */,
+				8B722664159A1E01001B28C5 /* blueLedSmallOff.png in Resources */,
+				8B722665159A1E01001B28C5 /* blueLedSmallOff@2x.png in Resources */,
+				8B722666159A1E01001B28C5 /* cellSelected.png in Resources */,
+				8B722667159A1E01001B28C5 /* disclosure.png in Resources */,
+				8B722668159A1E01001B28C5 /* disclosure@2x.png in Resources */,
+				8B72266D159A1E30001B28C5 /* InfoPlist.strings in Resources */,
+				8B722673159A1E4B001B28C5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B8EB7DD156A74B00061CF0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B722689159A1FFF001B28C5 /* AppDelegate.m in Sources */,
+				8B722646159A1DE3001B28C5 /* EFMGroupCell.m in Sources */,
+				8B722647159A1DE3001B28C5 /* EFMNestedTables.m in Sources */,
+				8B722648159A1DE3001B28C5 /* EFMSelectableCell.m in Sources */,
+				8B722649159A1DE3001B28C5 /* EFMSubCell.m in Sources */,
+				8B72266F159A1E34001B28C5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B722671159A1E4B001B28C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B722672159A1E4B001B28C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8B8EB7EE156A74B00061CF0C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+			);
+			name = InfoPlist.strings;
+			path = /Users/More/Apps/nestedTables/EFMNestedTablesExample/nestedTables;
+			sourceTree = "<absolute>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B8EB7FD156A74B00061CF0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: D De Matteis (RJZMM3E934)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "29EB3E1E-BE5F-480C-AC91-76FEAFB5F212";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8B8EB7FE156A74B00061CF0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: D De Matteis (PDXVK7SST3)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD9667F4-9F96-427A-82B2-44DD5C7B9BAA";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B8EB800156A74B00061CF0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EFMNestedTablesExample/EFMNestedTables-Prefix.pch";
+				INFOPLIST_FILE = "EFMNestedTablesExample/EFMNestedTables-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = EFMNestedTablesExample;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8B8EB801156A74B00061CF0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EFMNestedTablesExample/EFMNestedTables-Prefix.pch";
+				INFOPLIST_FILE = "EFMNestedTablesExample/EFMNestedTables-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = EFMNestedTablesExample;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B8EB7DB156A74B00061CF0C /* Build configuration list for PBXProject "EFMNestedTablesExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B8EB7FD156A74B00061CF0C /* Debug */,
+				8B8EB7FE156A74B00061CF0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B8EB7FF156A74B00061CF0C /* Build configuration list for PBXNativeTarget "EFMNestedTablesExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B8EB800156A74B00061CF0C /* Debug */,
+				8B8EB801156A74B00061CF0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B8EB7D8156A74B00061CF0C /* Project object */;
+}
