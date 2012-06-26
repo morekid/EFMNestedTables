@@ -1,0 +1,44 @@
+//
+//  SelectableCell.h
+//  EFMNestedTablesExample
+//
+//  Created by Daniele De Matteis on 23/05/2012.
+//  Copyright (c) 2012 Daniele De Matteis. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class EFMNestedTables;
+
+typedef enum {
+    Unchecked = 0,
+    Checked,
+    Halfchecked,
+} SelectableCellState;
+
+@interface EFMSelectableCell : UITableViewCell {
+    IBOutlet UIView *checkBox;
+    IBOutlet UILabel *cellText;
+    
+    UIImageView *onCheckBox;
+    IBOutlet UIImageView *offCheckBox;
+    
+    IBOutlet UIView *tapTransitionsOverlay;
+}
+
+@property (nonatomic, assign) EFMNestedTables *parentTable;
+@property (nonatomic) SelectableCellState selectableCellState;
+
+- (SelectableCellState) toggleCheck;
+- (void) check;
+- (void) uncheck;
+- (void) halfCheck;
+
+- (void) styleEnabled;
+- (void) styleDisabled;
+- (void) styleHalfEnabled;
+- (void) tapTransition;
+
+- (void) setupInterface;
+
+@end
