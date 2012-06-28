@@ -28,7 +28,6 @@ Then implement the following convenience methods:
 
 
 <br />
-<br />
 ### Filling the views
 
 
@@ -70,7 +69,6 @@ here you can set the Sub Item's cell attributes:
 	}
 
 
-<br />
 <br />
 ### Callbacks
 
