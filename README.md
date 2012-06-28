@@ -3,7 +3,7 @@ EFMNestedTables
 
 Obj-C module built on UITableView for creating a 2-level nested list UI control.
 
-![Shot1](morekid.github.com/EFMNestedTables/README/iPhone_P_shot1.png)
+![Shot1](http://morekid.github.com/EFMNestedTables/README/iPhone_P_shot1.png)
 
 
 How To:
