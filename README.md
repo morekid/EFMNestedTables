@@ -18,3 +18,6 @@ here you can set the amount of Sub Items for each Item in the Main table
 ### mainTable:mainTable setCell:cell forRowAtIndexPath:indexPath
 here you can set the Item's cell attributes
 
+### groupCell:groupCell setSubCell:subCell forRowAtIndexPath:indexPath;
+here you can set the Sub Item's cell attributes
+
