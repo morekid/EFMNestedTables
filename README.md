@@ -9,15 +9,26 @@ How To:
 
 Create a subclass of EFMNestedTables and implement the following convenience methods:
 
-### mainTable:mainTable numberOfItemsInSection:section
+### Filling the views
+
+#### mainTable:mainTable numberOfItemsInSection:section;
 here you can set the amount of Items in your Main table
 
-### mainTable:mainTable numberOfSubItemsforItem:cell atIndexPath:indexPath;
+#### mainTable:mainTable numberOfSubItemsforItem:item atIndexPath:indexPath;
 here you can set the amount of Sub Items for each Item in the Main table
 
-### mainTable:mainTable setCell:cell forRowAtIndexPath:indexPath
+#### mainTable:mainTable setItem:item forRowAtIndexPath:indexPath;
 here you can set the Item's cell attributes
 
-### groupCell:groupCell setSubCell:subCell forRowAtIndexPath:indexPath;
+#### item:item setSubItem:subItem forRowAtIndexPath:indexPath;
 here you can set the Sub Item's cell attributes
+
+### Callbacks
+
+#### mainTable:mainTable hasSetItem:item withIndexPath:indexPath toState:state;
+this is called when the Item state changes, here you can manage behavior according to the Item state.
+
+#### item:item hasSetSubItem:subItem withIndexPath:indexPath toState:state;
+this is called when the Sub Item state changes, here you can manage behavior according to the Sub Item state.
+
 
