@@ -27,6 +27,10 @@
 
 - (void) setupInterface {
     tapTransitionsOverlay.backgroundColor = [UIColor colorWithRed:0.15 green:0.54 blue:0.93 alpha:1.0];
+    
+    CGRect frame = self.cellText.frame;
+    frame.size.width = checkBox.frame.origin.x - frame.origin.x - (self.frame.size.width/30);
+    self.cellText.frame = frame;
 }
 
 - (SelectableCellState) toggleCheck {
