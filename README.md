@@ -26,7 +26,6 @@ Create a subclass of EFMNestedTables and use the following initialization code:
 
 Then implement the following convenience methods:
 
-
 <br />
 ### Filling the views
 
@@ -67,7 +66,6 @@ here you can set the Sub Item's cell attributes:
 	    subItem.itemText.text = [NSString stringWithFormat:@"My Sub Item %u", indexPath.row +1];
 	    return subItem;
 	}
-
 
 <br />
 ### Callbacks
