@@ -31,26 +31,25 @@ Then implement the following convenience methods:
 
 
 #### mainTable:mainTable numberOfItemsInSection:section;
+here you can set the amount of Items in your Main table:
 
 	- (NSInteger)mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section
 	{
 	    return 15; // amount of Items
 	}
 	
-here you can set the amount of Items in your Main table
-
 
 #### mainTable:mainTable numberOfSubItemsforItem:item atIndexPath:indexPath;
+here you can set the amount of Sub Items for each Item in the Main table:
 
 	- (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)item atIndexPath:(NSIndexPath *)indexPath
 	{
 	    return 3; // amount of Sub Items for given Item
 	}
 
-here you can set the amount of Sub Items for each Item in the Main table
-
 
 #### mainTable:mainTable setItem:item forRowAtIndexPath:indexPath;
+here you can set the Item's cell attributes:
 
 	- (EFMGroupCell *)mainTable:(UITableView *)mainTable setItem:(EFMGroupCell *)item forRowAtIndexPath:(NSIndexPath *)indexPath
 	{
@@ -58,10 +57,9 @@ here you can set the amount of Sub Items for each Item in the Main table
 	    return item;
 	}
 
-here you can set the Item's cell attributes
-
 
 #### item:item setSubItem:subItem forRowAtIndexPath:indexPath;
+here you can set the Sub Item's cell attributes:
 
 	- (EFMSubCell *)item:(EFMGroupCell *)item setSubItem:(EFMSubCell *)subItem forRowAtIndexPath:(NSIndexPath *)indexPath
 	{
@@ -69,13 +67,12 @@ here you can set the Item's cell attributes
 	    return subItem;
 	}
 
-here you can set the Sub Item's cell attributes
-
 
 ### Callbacks
 
 
 #### mainTable:mainTable hasSetItem:item withIndexPath:indexPath toState:state;
+this is called when the Item state changes, here you can manage behavior according to the Item state:
 
 	- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
 	{
@@ -94,10 +91,9 @@ here you can set the Sub Item's cell attributes
 	    }
 	}
 
-this is called when the Item state changes, here you can manage behavior according to the Item state.
-
 
 #### item:item hasSetSubItem:subItem withIndexPath:indexPath toState:state;
+this is called when the Sub Item state changes, here you can manage behavior according to the Sub Item state:
 
 	- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
 	{
@@ -112,7 +108,4 @@ this is called when the Item state changes, here you can manage behavior accordi
 	        	break;
 	    }
 	}
-
-this is called when the Sub Item state changes, here you can manage behavior according to the Sub Item state.
-
 
