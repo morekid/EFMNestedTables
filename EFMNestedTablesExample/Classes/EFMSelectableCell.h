@@ -1,5 +1,5 @@
 //
-//  SelectableCell.h
+//  EFMSelectableCell.h
 //  EFMNestedTablesExample
 //
 //  Created by Daniele De Matteis on 23/05/2012.

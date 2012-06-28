@@ -1,5 +1,5 @@
 //
-//  SelectableCell.m
+//  EFMSelectableCell.m
 //  EFMNestedTablesExample
 //
 //  Created by Daniele De Matteis on 23/05/2012.

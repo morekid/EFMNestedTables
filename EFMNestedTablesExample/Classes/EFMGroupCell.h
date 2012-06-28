@@ -1,5 +1,5 @@
 //
-//  GroupCell.h
+//  EFMGroupCell.h
 //  EFMNestedTablesExample
 //
 //  Created by Daniele De Matteis on 21/05/2012.

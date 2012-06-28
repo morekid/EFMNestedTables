@@ -1,5 +1,5 @@
 //
-//  NestedNavViewController.m
+//  ExampleNestedTablesViewController.m
 //  EFMNestedTablesExample
 //
 //  Created by Daniele De Matteis on 27/06/2012.
@@ -18,6 +18,7 @@
 {
     if (self = [super initWithNibName:@"EFMNestedTables" bundle:nil])
     {
+        // do init stuff
     }
     return self;
 }
