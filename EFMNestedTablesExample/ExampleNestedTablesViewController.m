@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "NestedNavViewController.h"
+#import "ExampleNestedTablesViewController.h"
 
-@interface NestedNavViewController ()
+@interface ExampleNestedTablesViewController ()
 
 @end
 
-@implementation NestedNavViewController
+@implementation ExampleNestedTablesViewController
 
 - (id) init
 {
@@ -45,7 +45,6 @@
     subItem.itemText.text = [NSString stringWithFormat:@"My Sub Item %u", indexPath.row +1];
     return subItem;
 }
-
 
 - (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
 {

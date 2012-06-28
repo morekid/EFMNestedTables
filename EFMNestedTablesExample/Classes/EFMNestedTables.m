@@ -20,13 +20,13 @@
 
 - (NSInteger)mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section
 {
-    NSLog(@"\n Oops! You didn't specify the amount of Items in the Main tableview \n Please implement \"mainTable:mainTable numberOfItemsInSection:section\" in your EFMNestedTables subclass.");
+    NSLog(@"\n Oops! You didn't specify the amount of Items in the Main tableview \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
     return 0;
 }
 
 - (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"\n Oops! You didn't specify the amount of Sub Items for this Main Item \n Please implement \"mainTable:mainTable numberOfSubItemsforItem:cell atIndexPath:indexPath\" in your EFMNestedTables subclass.");
+    NSLog(@"\n Oops! You didn't specify the amount of Sub Items for this Main Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
     return 0; 
 }
 
@@ -37,7 +37,7 @@
     
     if (indexPath.row == 0)
     {
-        NSLog(@"\n Oops! Item cells in the Main tableview are not configured \n Please implement \"mainTable:mainTable setCell:cell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
+        NSLog(@"\n Oops! Item cells in the Main tableview are not configured \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
     }
     return item;
 }
@@ -46,7 +46,7 @@
 {
     if (indexPath.row == 0)
     {
-        NSLog(@"\n Oops! Sub Items for this Item are not configured \n Please implement \"groupCell:groupCell setSubCell:subCell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
+        NSLog(@"\n Oops! Sub Items for this Item are not configured \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
     }
     return subItem;
 }
@@ -64,7 +64,7 @@
         default:
             break;
     }*/
-    NSLog(@"\n Oops! You didn't specify a behavior for this Item \n Please implement \"mainTable:mainTable didSetState:state forItem:item withIndexPath:indexPath\" in your EFMNestedTables subclass.");
+    NSLog(@"\n Oops! You didn't specify a behavior for this Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
 }
 
 - (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
@@ -80,7 +80,7 @@
          default:
          break;
     }*/
-    NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"mainTable:mainTable didSetState:state forSubItem:subItem withIndexPath:indexPath\" in your EFMNestedTables subclass.");
+    NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
 }
 
 #pragma mark - Class lifecycle

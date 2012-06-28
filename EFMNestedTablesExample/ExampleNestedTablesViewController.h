@@ -8,6 +8,6 @@
 
 #import "EFMNestedTables.h"
 
-@interface NestedNavViewController : EFMNestedTables
+@interface ExampleNestedTablesViewController : EFMNestedTables
 
 @end

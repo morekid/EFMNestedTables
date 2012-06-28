@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 //#import "EFMNestedTables.h"
-#import "NestedNavViewController.h"
+#import "ExampleNestedTablesViewController.h"
 
 @implementation AppDelegate
 
@@ -20,7 +20,7 @@
     //EFMNestedTables *nestedTables = [[EFMNestedTables alloc] initWithNibName:@"EFMNestedTables" bundle:nil];
     //self.window.rootViewController = nestedTables;
     
-    NestedNavViewController *nestedNav = [[NestedNavViewController alloc] init];
+    ExampleNestedTablesViewController *nestedNav = [[ExampleNestedTablesViewController alloc] init];
     self.window.rootViewController = nestedNav;
     
     [self.window makeKeyAndVisible];
