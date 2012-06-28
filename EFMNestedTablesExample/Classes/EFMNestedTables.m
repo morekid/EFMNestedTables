@@ -21,7 +21,7 @@
 - (NSInteger)mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section
 {
     NSLog(@"\n Oops! You didn't specify the amount of Items in the Main tableview \n Please implement \"mainTable:mainTable numberOfItemsInSection:section\" in your EFMNestedTables subclass.");
-    return mainItemsAmt;
+    return 0;
 }
 
 - (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -35,13 +35,19 @@
     return cell;
 }
 
+- (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"\n Oops! You didn't specify the amount of Sub Items for this Main Item \n Please implement \"mainTable:mainTable numberOfSubItemsforItem:cell atIndexPath:indexPath\" in your EFMNestedTables subclass.");
+    return 0; 
+}
+
 #pragma mark - Class lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    subItemsAmt = [[NSMutableArray alloc] initWithObjects: nil];
+    subItemsAmt = [[NSMutableDictionary alloc] initWithDictionary:nil];
 	expandedIndexes = [[NSMutableDictionary alloc] init];
 	selectableCellsState = [[NSMutableDictionary alloc] init];
 	selectableSubCellsState = [[NSMutableDictionary alloc] init];
@@ -71,10 +77,16 @@
         cell = groupCell;
         self.groupCell = nil;
     }
-    cell = [self mainTable:tableView setCell:cell forRowAtIndexPath:indexPath];
     
     [cell setParentTable: self];
-    [cell setSubCellsAmt: [[subItemsAmt objectAtIndex:indexPath.row] intValue]];
+    
+    cell = [self mainTable:tableView setCell:cell forRowAtIndexPath:indexPath];
+    //[cell setSubCellsAmt: [[subItemsAmt objectAtIndex:indexPath.row] intValue]];
+    
+    NSNumber *amt = [NSNumber numberWithInt:[self mainTable:tableView numberOfSubItemsforItem:cell atIndexPath:indexPath]];
+    [subItemsAmt setObject:amt forKey:indexPath];
+    
+    [cell setSubCellsAmt: [[subItemsAmt objectForKey:indexPath] intValue]];
     
     NSMutableDictionary *subCellsState = [selectableSubCellsState objectForKey:indexPath];
     int selectedSubCellsAmt = 0;
@@ -110,7 +122,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int amt = [[subItemsAmt objectAtIndex:indexPath.row] intValue];
+    int amt = [[subItemsAmt objectForKey:indexPath] intValue];
     BOOL isExpanded = [[expandedIndexes objectForKey:indexPath] boolValue];
     if(isExpanded) {
         return [EFMGroupCell getHeight] + [EFMGroupCell getsubCellHeight]*amt;

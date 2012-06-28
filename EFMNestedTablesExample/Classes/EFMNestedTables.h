@@ -17,7 +17,7 @@
 }
 
 @property (assign) int mainItemsAmt;
-@property (strong) NSMutableArray *subItemsAmt;
+@property (strong) NSMutableDictionary *subItemsAmt;
 
 @property (assign) IBOutlet EFMGroupCell *groupCell;
 
@@ -27,6 +27,8 @@
 #pragma mark - To be implemented in subclasses
 
 - (NSInteger) mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section;
+- (NSInteger) mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 - (EFMGroupCell *) mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 
 

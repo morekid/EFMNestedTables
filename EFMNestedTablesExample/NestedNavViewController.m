@@ -30,20 +30,20 @@
 
 - (NSInteger)mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger numOfItems = 10;
-    for (int i = 0; i < numOfItems; i++) {
-        int randNum = rand() % 5 + 1;
-        [self.subItemsAmt addObject:[NSNumber numberWithInt:randNum]];
-    }
-    return numOfItems;
+    return 30;
 }
 
-//- (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    cell.cellText.text = [NSString stringWithFormat:@"My Main Item %u", indexPath.row];
-//    
-//    return cell;
-//}
+- (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.cellText.text = [NSString stringWithFormat:@"My Main Item %u", indexPath.row +1];
+    
+    return cell;
+}
+
+- (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    return 3; 
+}
 
 //- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
