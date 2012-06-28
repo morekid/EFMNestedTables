@@ -18,13 +18,14 @@ typedef enum {
 
 @interface EFMSelectableCell : UITableViewCell {
     IBOutlet UIView *checkBox;
-    IBOutlet UILabel *cellText;
     
     UIImageView *onCheckBox;
     IBOutlet UIImageView *offCheckBox;
     
     IBOutlet UIView *tapTransitionsOverlay;
 }
+
+@property (nonatomic) IBOutlet UILabel *cellText;
 
 @property (nonatomic, assign) EFMNestedTables *parentTable;
 @property (nonatomic) SelectableCellState selectableCellState;

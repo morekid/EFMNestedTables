@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "EFMNestedTables.h"
+//#import "EFMNestedTables.h"
+#import "NestedNavViewController.h"
 
 @implementation AppDelegate
 
@@ -16,8 +17,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    EFMNestedTables *nestedTables = [[EFMNestedTables alloc] initWithNibName:@"EFMNestedTables" bundle:nil];
-    self.window.rootViewController = nestedTables;
+    //EFMNestedTables *nestedTables = [[EFMNestedTables alloc] initWithNibName:@"EFMNestedTables" bundle:nil];
+    //self.window.rootViewController = nestedTables;
+    
+    NestedNavViewController *nestedNav = [[NestedNavViewController alloc] init];
+    self.window.rootViewController = nestedNav;
+    
     [self.window makeKeyAndVisible];
     
     return YES;

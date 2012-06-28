@@ -10,7 +10,7 @@
 
 @implementation EFMSelectableCell
 
-@synthesize parentTable, selectableCellState;
+@synthesize cellText, parentTable, selectableCellState;
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {

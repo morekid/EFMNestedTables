@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B720517159B682A006BC732 /* NestedNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B720516159B682A006BC732 /* NestedNavViewController.m */; };
 		8B722646159A1DE3001B28C5 /* EFMGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B72263F159A1DE3001B28C5 /* EFMGroupCell.m */; };
 		8B722647159A1DE3001B28C5 /* EFMNestedTables.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B722641159A1DE3001B28C5 /* EFMNestedTables.m */; };
 		8B722648159A1DE3001B28C5 /* EFMSelectableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B722643159A1DE3001B28C5 /* EFMSelectableCell.m */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B720515159B682A006BC732 /* NestedNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NestedNavViewController.h; path = EFMNestedTablesExample/NestedNavViewController.h; sourceTree = "<group>"; };
+		8B720516159B682A006BC732 /* NestedNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NestedNavViewController.m; path = EFMNestedTablesExample/NestedNavViewController.m; sourceTree = "<group>"; };
 		8B72263E159A1DE3001B28C5 /* EFMGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFMGroupCell.h; sourceTree = "<group>"; };
 		8B72263F159A1DE3001B28C5 /* EFMGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFMGroupCell.m; sourceTree = "<group>"; };
 		8B722640159A1DE3001B28C5 /* EFMNestedTables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFMNestedTables.h; sourceTree = "<group>"; };
@@ -86,12 +89,12 @@
 		8B72263D159A1DE3001B28C5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8B72263E159A1DE3001B28C5 /* EFMGroupCell.h */,
-				8B72263F159A1DE3001B28C5 /* EFMGroupCell.m */,
 				8B722640159A1DE3001B28C5 /* EFMNestedTables.h */,
 				8B722641159A1DE3001B28C5 /* EFMNestedTables.m */,
 				8B722642159A1DE3001B28C5 /* EFMSelectableCell.h */,
 				8B722643159A1DE3001B28C5 /* EFMSelectableCell.m */,
+				8B72263E159A1DE3001B28C5 /* EFMGroupCell.h */,
+				8B72263F159A1DE3001B28C5 /* EFMGroupCell.m */,
 				8B722644159A1DE3001B28C5 /* EFMSubCell.h */,
 				8B722645159A1DE3001B28C5 /* EFMSubCell.m */,
 			);
@@ -102,8 +105,8 @@
 		8B72264B159A1DF0001B28C5 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				8B72264C159A1DF0001B28C5 /* EFMGroupCell.xib */,
 				8B72264D159A1DF0001B28C5 /* EFMNestedTables.xib */,
+				8B72264C159A1DF0001B28C5 /* EFMGroupCell.xib */,
 				8B72264E159A1DF0001B28C5 /* EFMSubCell.xib */,
 			);
 			name = Nibs;
@@ -177,6 +180,8 @@
 				8B722652159A1E01001B28C5 /* Default Images */,
 				8B722669159A1E0E001B28C5 /* AppDelegate.h */,
 				8B72266A159A1E0E001B28C5 /* AppDelegate.m */,
+				8B720515159B682A006BC732 /* NestedNavViewController.h */,
+				8B720516159B682A006BC732 /* NestedNavViewController.m */,
 			);
 			name = EFMNestedTables;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				8B722648159A1DE3001B28C5 /* EFMSelectableCell.m in Sources */,
 				8B722649159A1DE3001B28C5 /* EFMSubCell.m in Sources */,
 				8B72266F159A1E34001B28C5 /* main.m in Sources */,
+				8B720517159B682A006BC732 /* NestedNavViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

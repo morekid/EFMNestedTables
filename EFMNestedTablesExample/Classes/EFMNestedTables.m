@@ -14,18 +14,34 @@
 
 @implementation EFMNestedTables
 
-@synthesize groupCell;
+@synthesize mainItemsAmt, subItemsAmt, groupCell;
+
+#pragma mark - To be implemented in sublclasses
+
+- (NSInteger)mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section
+{
+    NSLog(@"\n Oops! You didn't specify the amount of Items in the Main tableview \n Please implement \"mainTable:mainTable numberOfItemsInSection:section\" in your EFMNestedTables subclass.");
+    return mainItemsAmt;
+}
+
+- (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    // customizable attributes:
+        // UILabel cellText
+    
+    if (indexPath.row == 0) {
+        NSLog(@"\n Oops! Your Item cells in the Main tableview are not set \n Please implement \"mainTable:mainTable setCell:cell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
+    }
+    return cell;
+}
+
+#pragma mark - Class lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    metricsGroupsAmt = 30;
-    metricsAmt =[[NSMutableArray alloc] initWithObjects: nil];
-    for (int i = 0; i < metricsGroupsAmt; i++) {
-        int randNum = rand() % 5 + 1;
-        [metricsAmt addObject:[NSNumber numberWithInt:randNum]];
-    }
+    subItemsAmt = [[NSMutableArray alloc] initWithObjects: nil];
 	expandedIndexes = [[NSMutableDictionary alloc] init];
 	selectableCellsState = [[NSMutableDictionary alloc] init];
 	selectableSubCellsState = [[NSMutableDictionary alloc] init];
@@ -38,9 +54,12 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - TableView delegation
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return metricsGroupsAmt;
+    mainItemsAmt = [self mainTable:tableView numberOfItemsInSection:section];
+    return mainItemsAmt;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,9 +71,10 @@
         cell = groupCell;
         self.groupCell = nil;
     }
+    cell = [self mainTable:tableView setCell:cell forRowAtIndexPath:indexPath];
     
     [cell setParentTable: self];
-    [cell setSubCellsAmt: [[metricsAmt objectAtIndex:indexPath.row] intValue]];
+    [cell setSubCellsAmt: [[subItemsAmt objectAtIndex:indexPath.row] intValue]];
     
     NSMutableDictionary *subCellsState = [selectableSubCellsState objectForKey:indexPath];
     int selectedSubCellsAmt = 0;
@@ -90,7 +110,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int amt = [[metricsAmt objectAtIndex:indexPath.row] intValue];
+    int amt = [[subItemsAmt objectAtIndex:indexPath.row] intValue];
     BOOL isExpanded = [[expandedIndexes objectForKey:indexPath] boolValue];
     if(isExpanded) {
         return [EFMGroupCell getHeight] + [EFMGroupCell getsubCellHeight]*amt;
@@ -125,6 +145,8 @@
             break;
     }
 }
+
+#pragma mark - Nested Tables events
 
 - (void) groupCell:(EFMGroupCell *)cell didSelectSubCell:(EFMSelectableCell *)subCell withIndexPath: (NSIndexPath *)indexPath
 {

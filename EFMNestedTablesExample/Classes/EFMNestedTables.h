@@ -11,16 +11,23 @@
 #import "EFMSelectableCell.h"
 
 @interface EFMNestedTables : UITableViewController {
-    int metricsGroupsAmt;
-    NSMutableArray *metricsAmt;
 	NSMutableDictionary *expandedIndexes;
     NSMutableDictionary *selectableCellsState;
     NSMutableDictionary *selectableSubCellsState;
 }
 
+@property (assign) int mainItemsAmt;
+@property (strong) NSMutableArray *subItemsAmt;
+
 @property (assign) IBOutlet EFMGroupCell *groupCell;
 
 - (void) collapsableButtonTapped: (UIControl *)button withEvent: (UIEvent *)event;
 - (void) groupCell:(EFMGroupCell *)cell didSelectSubCell:(EFMSelectableCell *)subCell withIndexPath: (NSIndexPath *)indexPath;
+
+#pragma mark - To be implemented in subclasses
+
+- (NSInteger) mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section;
+- (EFMGroupCell *) mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
+
 
 @end
