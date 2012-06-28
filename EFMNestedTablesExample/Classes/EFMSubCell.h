@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "EFMSelectableCell.h"
 
-@interface EFMSubCell : EFMSelectableCell {
-}
+@interface EFMSubCell : EFMSelectableCell
 
 @end

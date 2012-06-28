@@ -35,7 +35,8 @@
     return self;
 }
 
-- (void) setupInterface {
+- (void) setupInterface
+{
     [super setupInterface];
     
     expandBtn.frame = CGRectMake(0, 5, 40, 40);
@@ -51,7 +52,8 @@
 
 #pragma mark - behavior
 
--(void) rotateExpandBtn:(id)sender {
+-(void) rotateExpandBtn:(id)sender
+{
     isExpanded = !isExpanded;
     switch (isExpanded) {
         case 0:
@@ -65,27 +67,35 @@
     }
 }
 
-- (void)rotateExpandBtnToExpanded {
+- (void)rotateExpandBtnToExpanded
+{
     [UIView beginAnimations:@"rotateDisclosureButt" context:nil];
     [UIView setAnimationDuration:0.2];
     expandBtn.transform = CGAffineTransformMakeRotation(M_PI*2.5);
     [UIView commitAnimations];
 }
 
-- (void)rotateExpandBtnToCollapsed {
+- (void)rotateExpandBtnToCollapsed
+{
     [UIView beginAnimations:@"rotateDisclosureButt" context:nil];
     [UIView setAnimationDuration:0.2];
     expandBtn.transform = CGAffineTransformMakeRotation(M_PI*2);
     [UIView commitAnimations];
 }
 
-- (SelectableCellState) toggleCheck {
+- (SelectableCellState) toggleCheck
+{
     SelectableCellState cellState = [super toggleCheck];
-    if (self.selectableCellState == Checked) {
+    if (self.selectableCellState == Checked)
+    {
         expandBtn.alpha = 1.0;
-    } else if (self.selectableCellState == Halfchecked) {
+    }
+    else if (self.selectableCellState == Halfchecked)
+    {
         expandBtn.alpha = 0.75;
-    } else {
+    }
+    else
+    {
         expandBtn.alpha = 0.45;
     }
     return cellState;
@@ -106,77 +116,92 @@
     expandBtn.alpha = 0.75;
 }
 
-- (void) subCellsToggleCheck {
+- (void) subCellsToggleCheck
+{
     
-    if (self.selectableCellState == Checked) {
+    if (self.selectableCellState == Checked)
+    {
         //selectedSubCellsAmt = 0; // not necessary but safer, try to remove this if cells behave oddly on tap..
         subCellsCommand = AllSubCellsCommandChecked;
-    } else {
+    }
+    else
+    {
         //selectedSubCellsAmt = subCellsAmt; // not necessary but safer, try to remove this if cells behave oddly on tap..
         subCellsCommand = AllSubCellsCommandUnchecked;
     }
-    for (int i = 0; i < subCellsAmt; i++) {
+    for (int i = 0; i < subCellsAmt; i++)
+    {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
         [self tableView:subTable didSelectRowAtIndexPath:indexPath];
     }
     subCellsCommand = AllSubCellsCommandNone;
 }
 
-- (void) tapTransition {
+- (void) tapTransition
+{
     [super tapTransition];
 }
 
 #pragma mark - Table view
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return subCellsAmt;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     EFMSubCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SubCell"];
     
-    if (cell == nil) {
+    if (cell == nil)
+    {
         [[NSBundle mainBundle] loadNibNamed:@"EFMSubCell" owner:self options:nil];
         cell = subCell;
         self.subCell = nil;
     }
     
     SelectableCellState cellState = [[selectableSubCellsState objectForKey:indexPath] intValue];
-    switch (cellState) {
+    switch (cellState)
+    {
         case Checked:       [cell check];       break;
         case Unchecked:     [cell uncheck];     break;
         default:                                break;
     }
     
-    cell = [self.parentTable groupCell:self setSubCell:cell forRowAtIndexPath:indexPath];
+    cell = [self.parentTable item:self setSubItem:cell forRowAtIndexPath:indexPath];
 
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return subCellHeight;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     EFMSubCell *cell = (EFMSubCell *)[tableView cellForRowAtIndexPath:indexPath];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = (EFMSubCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
     }
     [cell tapTransition];
     
-    switch (subCellsCommand) {
-        
+    switch (subCellsCommand)
+    {
         // case parent cell is tapped
         case AllSubCellsCommandChecked:
-            if (cell.selectableCellState == Unchecked) {
+            if (cell.selectableCellState == Unchecked)
+            {
                 [cell check];
                 selectedSubCellsAmt++;
             }
             break;
         case AllSubCellsCommandUnchecked:
-            if (cell.selectableCellState == Checked) {
+            if (cell.selectableCellState == Checked)
+            {
                 [cell uncheck];
                 selectedSubCellsAmt--;
             }
@@ -184,23 +209,33 @@
         
         // case specific cell is tapped
         default:
-            if ([cell toggleCheck]) {
+            if ([cell toggleCheck])
+            {
                 selectedSubCellsAmt++;
-                if (selectedSubCellsAmt == subCellsAmt && self.selectableCellState != Checked) {
+                if (selectedSubCellsAmt == subCellsAmt && self.selectableCellState != Checked)
+                {
                     [self check];
-                } else if (selectedSubCellsAmt != subCellsAmt && selectedSubCellsAmt > 0) {
-                    [self halfCheck];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
                 }
-                
-                // load graph for this metric
-            } else {
+                else if (selectedSubCellsAmt != subCellsAmt && selectedSubCellsAmt > 0 && self.selectableCellState != Halfchecked)
+                {
+                    [self halfCheck];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
+                }
+            }
+            else
+            {
                 selectedSubCellsAmt--;
-                if (selectedSubCellsAmt == 0) {
+                if (selectedSubCellsAmt == 0 && self.selectableCellState != Unchecked)
+                {
                     [self uncheck];
-                } else {
-                    [self halfCheck];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
                 }
-                // remove graph for this metric
+                else if (self.selectableCellState != Halfchecked)
+                {
+                    [self halfCheck];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
+                }
             }
             break;
     }

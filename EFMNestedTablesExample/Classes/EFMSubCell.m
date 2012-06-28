@@ -20,11 +20,13 @@
     return self;
 }
 
-- (void) setupInterface {
+- (void) setupInterface
+{
     [super setupInterface];
 }
 
-- (void) tapTransition {
+- (void) tapTransition
+{
     [super tapTransition];
 }
 

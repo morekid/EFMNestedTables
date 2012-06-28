@@ -30,23 +30,57 @@
     return 0; 
 }
 
-- (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath 
+- (EFMGroupCell *)mainTable:(UITableView *)mainTable setItem:(EFMGroupCell *)item forRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     // customizable attributes:
-    // UILabel cellText
+    // UILabel itemText
     
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         NSLog(@"\n Oops! Item cells in the Main tableview are not configured \n Please implement \"mainTable:mainTable setCell:cell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
     }
-    return cell;
+    return item;
 }
 
-- (EFMSubCell *)groupCell:(EFMGroupCell *)groupCell setSubCell:(EFMSubCell *)subCell forRowAtIndexPath:(NSIndexPath *)indexPath
+- (EFMSubCell *)item:(EFMGroupCell *)item setSubItem:(EFMSubCell *)subItem forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         NSLog(@"\n Oops! Sub Items for this Item are not configured \n Please implement \"groupCell:groupCell setSubCell:subCell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
     }
-    return subCell;
+    return subItem;
+}
+
+- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
+{
+    // sample Item behavior management code
+    /*switch (state) {
+        case Checked:
+            // do stuff
+            break;
+        case Unchecked:
+            // do stuff
+            break;
+        default:
+            break;
+    }*/
+    NSLog(@"\n Oops! You didn't specify a behavior for this Item \n Please implement \"mainTable:mainTable didSetState:state forItem:item withIndexPath:indexPath\" in your EFMNestedTables subclass.");
+}
+
+- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
+{
+    // sample Item behavior management code
+    /*switch (state) {
+         case Checked:
+            // do stuff
+         break;
+         case Unchecked:
+            // do stuff
+         break;
+         default:
+         break;
+    }*/
+    NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"mainTable:mainTable didSetState:state forSubItem:subItem withIndexPath:indexPath\" in your EFMNestedTables subclass.");
 }
 
 #pragma mark - Class lifecycle
@@ -80,7 +114,8 @@
 {
     EFMGroupCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
     
-    if (cell == nil) {
+    if (cell == nil)
+    {
         [[NSBundle mainBundle] loadNibNamed:@"EFMGroupCell" owner:self options:nil];
         cell = groupCell;
         self.groupCell = nil;
@@ -88,7 +123,7 @@
     
     [cell setParentTable: self];
     
-    cell = [self mainTable:tableView setCell:cell forRowAtIndexPath:indexPath];
+    cell = [self mainTable:tableView setItem:cell forRowAtIndexPath:indexPath];
     
     NSNumber *amt = [NSNumber numberWithInt:[self mainTable:tableView numberOfSubItemsforItem:cell atIndexPath:indexPath]];
     [subItemsAmt setObject:amt forKey:indexPath];
@@ -97,7 +132,8 @@
     
     NSMutableDictionary *subCellsState = [selectableSubCellsState objectForKey:indexPath];
     int selectedSubCellsAmt = 0;
-    for (NSString *key in subCellsState) {
+    for (NSString *key in subCellsState)
+    {
         SelectableCellState cellState = [[subCellsState objectForKey:key] intValue];
         if (cellState == Checked) {
             selectedSubCellsAmt++;
@@ -107,7 +143,8 @@
     [cell setSelectableSubCellsState: [selectableSubCellsState objectForKey:indexPath]];
     
     SelectableCellState cellState = [[selectableCellsState objectForKey:indexPath] intValue];
-    switch (cellState) {
+    switch (cellState)
+    {
         case Checked:       [cell check];       break;
         case Unchecked:     [cell uncheck];     break;
         case Halfchecked:   [cell halfCheck];   break;
@@ -116,9 +153,12 @@
     
     BOOL isExpanded = [[expandedIndexes objectForKey:indexPath] boolValue];
     cell.isExpanded = isExpanded;
-    if(cell.isExpanded) {
+    if(cell.isExpanded)
+    {
         [cell rotateExpandBtnToExpanded];
-    } else {
+    }
+    else
+    {
         [cell rotateExpandBtnToCollapsed];
     }
     
@@ -131,7 +171,8 @@
 {
     int amt = [[subItemsAmt objectForKey:indexPath] intValue];
     BOOL isExpanded = [[expandedIndexes objectForKey:indexPath] boolValue];
-    if(isExpanded) {
+    if(isExpanded)
+    {
         return [EFMGroupCell getHeight] + [EFMGroupCell getsubCellHeight]*amt;
     }
     return [EFMGroupCell getHeight];
@@ -150,24 +191,12 @@
     
     [cell subCellsToggleCheck];
     
-    switch (cellState) {
-        case Checked:
-            // load/unload graphs according to this cell state and its subcells
-            break;
-        case Unchecked:
-            // load/unload graphs according to this cell state and its subcells
-            break;
-        case Halfchecked:
-            // load/unload graphs according to this cell state and its subcells
-            break;
-        default:
-            break;
-    }
+    [self mainTable:tableView hasSetItem:cell withIndexPath:indexPath toState:cellState];
 }
 
 #pragma mark - Nested Tables events
 
-- (void) groupCell:(EFMGroupCell *)cell didSelectSubCell:(EFMSelectableCell *)subCell withIndexPath: (NSIndexPath *)indexPath
+- (void) groupCell:(EFMGroupCell *)cell didSelectSubCell:(EFMSelectableCell *)subCell withIndexPath:(NSIndexPath *)indexPath
 {
     NSIndexPath *groupCellIndexPath = [self.tableView indexPathForCell:cell];
     NSNumber *cellStateNumber = [NSNumber numberWithInt:cell.selectableCellState];
@@ -175,14 +204,19 @@
     
     //NSIndexPath *subCellIndexPath = [cell.subTable indexPathForCell:subCell];
     NSNumber *subCellStateNumber = [NSNumber numberWithInt:subCell.selectableCellState];
-    if (![selectableSubCellsState objectForKey:groupCellIndexPath]) {
+    if (![selectableSubCellsState objectForKey:groupCellIndexPath])
+    {
         NSMutableDictionary *subCellState = [[NSMutableDictionary alloc] initWithObjectsAndKeys: subCellStateNumber, indexPath, nil];
         [selectableSubCellsState setObject:subCellState forKey:groupCellIndexPath];
-    } else {
+    }
+    else
+    {
         [[selectableSubCellsState objectForKey:groupCellIndexPath] setObject:subCellStateNumber forKey:indexPath];
     }
     
     [cell setSelectableSubCellsState: [selectableSubCellsState objectForKey:groupCellIndexPath]];
+    
+    [self item:cell hasSetSubItem:subCell withIndexPath:indexPath toState:subCell.selectableCellState];
 }
 
 - (void) collapsableButtonTapped: (UIControl *) button withEvent: (UIEvent *) event

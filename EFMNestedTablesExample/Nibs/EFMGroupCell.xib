@@ -230,14 +230,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">cellText</string>
-						<reference key="source" ref="244650526"/>
-						<reference key="destination" ref="506234663"/>
-					</object>
-					<int key="connectionID">37</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">expandBtn</string>
 						<reference key="source" ref="244650526"/>
 						<reference key="destination" ref="607892533"/>
@@ -283,6 +275,14 @@
 						<reference key="destination" ref="548392888"/>
 					</object>
 					<int key="connectionID">47</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">itemText</string>
+						<reference key="source" ref="244650526"/>
+						<reference key="destination" ref="506234663"/>
+					</object>
+					<int key="connectionID">52</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -392,7 +392,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">51</int>
+			<int key="maxID">52</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -446,19 +446,19 @@
 					<string key="className">EFMSelectableCell</string>
 					<string key="superclassName">UITableViewCell</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="cellText">UILabel</string>
 						<string key="checkBox">UIView</string>
+						<string key="itemText">UILabel</string>
 						<string key="offCheckBox">UIImageView</string>
 						<string key="tapTransitionsOverlay">UIView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="cellText">
-							<string key="name">cellText</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="checkBox">
 							<string key="name">checkBox</string>
 							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="itemText">
+							<string key="name">itemText</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="offCheckBox">
 							<string key="name">offCheckBox</string>

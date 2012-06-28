@@ -10,7 +10,7 @@
 
 @implementation EFMSelectableCell
 
-@synthesize cellText, parentTable, selectableCellState;
+@synthesize itemText, parentTable, selectableCellState;
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
@@ -20,70 +20,83 @@
     }
     return self;
 }
-- (void) layoutSubviews {
+- (void) layoutSubviews
+{
     [super layoutSubviews];
     [self setupInterface];
 }
 
-- (void) setupInterface {
+- (void) setupInterface
+{
     tapTransitionsOverlay.backgroundColor = [UIColor colorWithRed:0.15 green:0.54 blue:0.93 alpha:1.0];
     
-    CGRect frame = self.cellText.frame;
+    CGRect frame = self.itemText.frame;
     frame.size.width = checkBox.frame.origin.x - frame.origin.x - (self.frame.size.width/30);
-    self.cellText.frame = frame;
+    self.itemText.frame = frame;
 }
 
-- (SelectableCellState) toggleCheck {
-    if (selectableCellState == Checked) {
+- (SelectableCellState) toggleCheck
+{
+    if (selectableCellState == Checked)
+    {
         selectableCellState = Unchecked;
         [self styleDisabled];
-    } else {
+    }
+    else
+    {
         selectableCellState = Checked;
         [self styleEnabled];
     }
     return selectableCellState;
 }
 
-- (void) check {
+- (void) check
+{
     selectableCellState = Checked;
     [self styleEnabled];
 }
 
-- (void) uncheck {
+- (void) uncheck
+{
     selectableCellState = Unchecked;
     [self styleDisabled];
 }
 
-- (void) halfCheck {
+- (void) halfCheck
+{
     selectableCellState = Halfchecked;
     [self styleHalfEnabled];
 }
 
-- (void) styleEnabled {
+- (void) styleEnabled
+{
     for (UIView *view in checkBox.subviews) [view removeFromSuperview];
     [checkBox addSubview:onCheckBox];
     checkBox.alpha = 1.0;
-    cellText.alpha = 1.0;
+    itemText.alpha = 1.0;
     self.backgroundView.backgroundColor = [UIColor colorWithRed:0.15 green:0.54 blue:0.93 alpha:0.2]; 
 }
 
-- (void) styleDisabled {
+- (void) styleDisabled
+{
     for (UIView *view in checkBox.subviews) [view removeFromSuperview];
     [checkBox addSubview:offCheckBox];
     checkBox.alpha = 1.0;
-    cellText.alpha = 0.4;
+    itemText.alpha = 0.4;
     self.backgroundView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:1.0]; 
 }
 
-- (void) styleHalfEnabled {
+- (void) styleHalfEnabled
+{
     for (UIView *view in checkBox.subviews) [view removeFromSuperview];
     [checkBox addSubview:onCheckBox];
     checkBox.alpha = 0.45;
-    cellText.alpha = 0.7;
+    itemText.alpha = 0.7;
     self.backgroundView.backgroundColor = [UIColor colorWithRed:0.15 green:0.54 blue:0.93 alpha:0.13]; 
 }
 
-- (void) tapTransition {
+- (void) tapTransition
+{
     tapTransitionsOverlay.alpha = 1.0;
     [UIView beginAnimations:@"tapTransition" context:nil];
     [UIView setAnimationDuration:0.8];

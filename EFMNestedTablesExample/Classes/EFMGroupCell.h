@@ -19,7 +19,8 @@ typedef enum {
 static const int height = 50;
 static const int subCellHeight = 40;
 
-@interface EFMGroupCell : EFMSelectableCell <UITableViewDelegate, UITableViewDataSource> {
+@interface EFMGroupCell : EFMSelectableCell <UITableViewDelegate, UITableViewDataSource>
+{
     IBOutlet UIButton *expandBtn;
     AllSubCellsCommand subCellsCommand;
 }

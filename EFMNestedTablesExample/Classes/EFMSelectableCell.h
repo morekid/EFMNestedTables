@@ -10,13 +10,16 @@
 
 @class EFMNestedTables;
 
-typedef enum {
+typedef enum
+{
     Unchecked = 0,
     Checked,
     Halfchecked,
-} SelectableCellState;
+}
+SelectableCellState;
 
-@interface EFMSelectableCell : UITableViewCell {
+@interface EFMSelectableCell : UITableViewCell
+{
     IBOutlet UIView *checkBox;
     
     UIImageView *onCheckBox;
@@ -25,7 +28,7 @@ typedef enum {
     IBOutlet UIView *tapTransitionsOverlay;
 }
 
-@property (nonatomic) IBOutlet UILabel *cellText;
+@property (nonatomic) IBOutlet UILabel *itemText;
 
 @property (nonatomic, assign) EFMNestedTables *parentTable;
 @property (nonatomic) SelectableCellState selectableCellState;
