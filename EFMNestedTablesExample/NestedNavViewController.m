@@ -18,12 +18,6 @@
 {
     if (self = [super initWithNibName:@"EFMNestedTables" bundle:nil])
     {
-//        self.metricsGroupsAmt = 5;
-//        for (int i = 0; i < self.metricsGroupsAmt; i++) {
-//            int randNum = rand() % 5 + 1;
-//            [self.metricsAmt addObject:[NSNumber numberWithInt:randNum]];
-//        }
-//        NSLog(@"test %@", self.metricsAmt);
     }
     return self;
 }
@@ -44,14 +38,5 @@
 {
     return 3; 
 }
-
-//- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
-//    
-//    NSLog(@"%f, %@", height, self.metricsAmt);
-//    return height;
-//}
-
 
 @end
