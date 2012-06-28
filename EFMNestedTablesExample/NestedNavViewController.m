@@ -27,6 +27,11 @@
     return 30;
 }
 
+- (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    return 3; 
+}
+
 - (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.cellText.text = [NSString stringWithFormat:@"My Main Item %u", indexPath.row +1];
@@ -34,9 +39,11 @@
     return cell;
 }
 
-- (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (EFMSubCell *)groupCell:(EFMGroupCell *)groupCell setSubCell:(EFMSubCell *)subCell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 3; 
+    subCell.cellText.text = [NSString stringWithFormat:@"My Sub Item %u", indexPath.row +1];
+    
+    return subCell;
 }
 
 @end

@@ -24,21 +24,29 @@
     return 0;
 }
 
-- (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    // customizable attributes:
-        // UILabel cellText
-    
-    if (indexPath.row == 0) {
-        NSLog(@"\n Oops! Your Item cells in the Main tableview are not set \n Please implement \"mainTable:mainTable setCell:cell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
-    }
-    return cell;
-}
-
 - (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"\n Oops! You didn't specify the amount of Sub Items for this Main Item \n Please implement \"mainTable:mainTable numberOfSubItemsforItem:cell atIndexPath:indexPath\" in your EFMNestedTables subclass.");
     return 0; 
+}
+
+- (EFMGroupCell *)mainTable:(UITableView *)mainTable setCell:(EFMGroupCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    // customizable attributes:
+    // UILabel cellText
+    
+    if (indexPath.row == 0) {
+        NSLog(@"\n Oops! Item cells in the Main tableview are not configured \n Please implement \"mainTable:mainTable setCell:cell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
+    }
+    return cell;
+}
+
+- (EFMSubCell *)groupCell:(EFMGroupCell *)groupCell setSubCell:(EFMSubCell *)subCell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        NSLog(@"\n Oops! Sub Items for this Item are not configured \n Please implement \"groupCell:groupCell setSubCell:subCell forRowAtIndexPath:indexPath\" in your EFMNestedTables subclass.");
+    }
+    return subCell;
 }
 
 #pragma mark - Class lifecycle
@@ -81,7 +89,6 @@
     [cell setParentTable: self];
     
     cell = [self mainTable:tableView setCell:cell forRowAtIndexPath:indexPath];
-    //[cell setSubCellsAmt: [[subItemsAmt objectAtIndex:indexPath.row] intValue]];
     
     NSNumber *amt = [NSNumber numberWithInt:[self mainTable:tableView numberOfSubItemsforItem:cell atIndexPath:indexPath]];
     [subItemsAmt setObject:amt forKey:indexPath];

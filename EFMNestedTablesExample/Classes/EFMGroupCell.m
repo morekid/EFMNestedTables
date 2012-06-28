@@ -148,6 +148,8 @@
         default:                                break;
     }
     
+    cell = [self.parentTable groupCell:self setSubCell:cell forRowAtIndexPath:indexPath];
+
     return cell;
 }
 
