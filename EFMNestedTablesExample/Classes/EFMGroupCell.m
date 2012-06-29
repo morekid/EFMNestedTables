@@ -219,12 +219,12 @@
                 if (selectedSubCellsAmt == subCellsAmt && self.selectableCellState != Checked)
                 {
                     [self check];
-                    [self.parentTable mainItemDidChange:self];
+                    [self.parentTable mainItemDidChange:self forTap:cellTapped];
                 }
                 else if (selectedSubCellsAmt != subCellsAmt && selectedSubCellsAmt > 0 && self.selectableCellState != Halfchecked)
                 {
                     [self halfCheck];
-                    [self.parentTable mainItemDidChange:self];
+                    [self.parentTable mainItemDidChange:self forTap:cellTapped];
                 }
             }
             else
@@ -233,12 +233,12 @@
                 if (selectedSubCellsAmt == 0 && self.selectableCellState != Unchecked)
                 {
                     [self uncheck];
-                    [self.parentTable mainItemDidChange:self];
+                    [self.parentTable mainItemDidChange:self forTap:cellTapped];
                 }
                 else if (self.selectableCellState != Halfchecked)
                 {
                     [self halfCheck];
-                    [self.parentTable mainItemDidChange:self];
+                    [self.parentTable mainItemDidChange:self forTap:cellTapped];
                 }
             }
             break;

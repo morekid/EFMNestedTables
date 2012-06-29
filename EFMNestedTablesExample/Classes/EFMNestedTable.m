@@ -96,7 +96,7 @@
     NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
 }
 
-- (void) mainItemDidChange: (EFMGroupCell *)item
+- (void) mainItemDidChange: (EFMGroupCell *)item forTap:(BOOL)tapped
 {
     if(delegate != nil && [delegate respondsToSelector:@selector(mainTable:itemDidChange:)] )
     {
@@ -104,7 +104,7 @@
     }
 }
 
-- (void) subItemDidChange: (EFMSelectableCell *)subItem
+- (void) subItemDidChange: (EFMSelectableCell *)subItem forTap:(BOOL)tapped
 {
     if(delegate != nil && [delegate respondsToSelector:@selector(item:subItemDidChange:)] )
     {
@@ -220,7 +220,7 @@
     
     [cell subCellsToggleCheck];
     
-    [self mainItemDidChange:cell];
+    [self mainItemDidChange:cell forTap:YES];
 }
 
 #pragma mark - Nested Tables events

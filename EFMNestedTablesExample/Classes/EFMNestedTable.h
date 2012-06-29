@@ -25,8 +25,8 @@
     NSMutableDictionary *selectableSubCellsState;
 }
 
-- (void) mainItemDidChange: (EFMGroupCell *)item;
-- (void) subItemDidChange: (EFMSelectableCell *)subItem;
+- (void) mainItemDidChange: (EFMGroupCell *)item forTap:(BOOL)tapped;
+- (void) subItemDidChange: (EFMSelectableCell *)subItem forTap:(BOOL)tapped;
 
 #pragma mark - To be implemented in subclasses
 
