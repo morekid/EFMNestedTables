@@ -15,24 +15,22 @@
 		8B72264F159A1DF0001B28C5 /* EFMGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B72264C159A1DF0001B28C5 /* EFMGroupCell.xib */; };
 		8B722650159A1DF0001B28C5 /* EFMNestedTables.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B72264D159A1DF0001B28C5 /* EFMNestedTables.xib */; };
 		8B722651159A1DF0001B28C5 /* EFMSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B72264E159A1DF0001B28C5 /* EFMSubCell.xib */; };
-		8B72265E159A1E01001B28C5 /* blueLedBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722653159A1E01001B28C5 /* blueLedBig.png */; };
-		8B72265F159A1E01001B28C5 /* blueLedBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722654159A1E01001B28C5 /* blueLedBig@2x.png */; };
-		8B722660159A1E01001B28C5 /* blueLedBigOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722655159A1E01001B28C5 /* blueLedBigOff.png */; };
-		8B722661159A1E01001B28C5 /* blueLedBigOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722656159A1E01001B28C5 /* blueLedBigOff@2x.png */; };
-		8B722662159A1E01001B28C5 /* blueLedSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722657159A1E01001B28C5 /* blueLedSmall.png */; };
-		8B722663159A1E01001B28C5 /* blueLedSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722658159A1E01001B28C5 /* blueLedSmall@2x.png */; };
-		8B722664159A1E01001B28C5 /* blueLedSmallOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B722659159A1E01001B28C5 /* blueLedSmallOff.png */; };
-		8B722665159A1E01001B28C5 /* blueLedSmallOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265A159A1E01001B28C5 /* blueLedSmallOff@2x.png */; };
-		8B722666159A1E01001B28C5 /* cellSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265B159A1E01001B28C5 /* cellSelected.png */; };
-		8B722667159A1E01001B28C5 /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265C159A1E01001B28C5 /* disclosure.png */; };
-		8B722668159A1E01001B28C5 /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B72265D159A1E01001B28C5 /* disclosure@2x.png */; };
-		8B72266D159A1E30001B28C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B8EB7EE156A74B00061CF0C /* InfoPlist.strings */; };
 		8B72266F159A1E34001B28C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B72266E159A1E34001B28C5 /* main.m */; };
 		8B722673159A1E4B001B28C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B722671159A1E4B001B28C5 /* InfoPlist.strings */; };
-		8B722689159A1FFF001B28C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B72266A159A1E0E001B28C5 /* AppDelegate.m */; };
 		8B8EB7E6156A74B00061CF0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8EB7E5156A74B00061CF0C /* UIKit.framework */; };
 		8B8EB7E8156A74B00061CF0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8EB7E7156A74B00061CF0C /* Foundation.framework */; };
 		8B8EB7EA156A74B00061CF0C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8EB7E9156A74B00061CF0C /* CoreGraphics.framework */; };
+		8BD80F85159DF5DF003D7C37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD80F7F159DF576003D7C37 /* AppDelegate.m */; };
+		8BD80F91159DF659003D7C37 /* blueLedBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F87159DF659003D7C37 /* blueLedBig.png */; };
+		8BD80F92159DF659003D7C37 /* blueLedBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F88159DF659003D7C37 /* blueLedBig@2x.png */; };
+		8BD80F93159DF659003D7C37 /* blueLedBigOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F89159DF659003D7C37 /* blueLedBigOff.png */; };
+		8BD80F94159DF659003D7C37 /* blueLedBigOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F8A159DF659003D7C37 /* blueLedBigOff@2x.png */; };
+		8BD80F95159DF659003D7C37 /* blueLedSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F8B159DF659003D7C37 /* blueLedSmall.png */; };
+		8BD80F96159DF659003D7C37 /* blueLedSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F8C159DF659003D7C37 /* blueLedSmall@2x.png */; };
+		8BD80F97159DF659003D7C37 /* blueLedSmallOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F8D159DF659003D7C37 /* blueLedSmallOff.png */; };
+		8BD80F98159DF659003D7C37 /* blueLedSmallOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F8E159DF659003D7C37 /* blueLedSmallOff@2x.png */; };
+		8BD80F99159DF659003D7C37 /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F8F159DF659003D7C37 /* disclosure.png */; };
+		8BD80F9A159DF659003D7C37 /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD80F90159DF659003D7C37 /* disclosure@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,19 +47,6 @@
 		8B72264C159A1DF0001B28C5 /* EFMGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFMGroupCell.xib; sourceTree = "<group>"; };
 		8B72264D159A1DF0001B28C5 /* EFMNestedTables.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFMNestedTables.xib; sourceTree = "<group>"; };
 		8B72264E159A1DF0001B28C5 /* EFMSubCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFMSubCell.xib; sourceTree = "<group>"; };
-		8B722653159A1E01001B28C5 /* blueLedBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedBig.png; sourceTree = "<group>"; };
-		8B722654159A1E01001B28C5 /* blueLedBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedBig@2x.png"; sourceTree = "<group>"; };
-		8B722655159A1E01001B28C5 /* blueLedBigOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedBigOff.png; sourceTree = "<group>"; };
-		8B722656159A1E01001B28C5 /* blueLedBigOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedBigOff@2x.png"; sourceTree = "<group>"; };
-		8B722657159A1E01001B28C5 /* blueLedSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedSmall.png; sourceTree = "<group>"; };
-		8B722658159A1E01001B28C5 /* blueLedSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedSmall@2x.png"; sourceTree = "<group>"; };
-		8B722659159A1E01001B28C5 /* blueLedSmallOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedSmallOff.png; sourceTree = "<group>"; };
-		8B72265A159A1E01001B28C5 /* blueLedSmallOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedSmallOff@2x.png"; sourceTree = "<group>"; };
-		8B72265B159A1E01001B28C5 /* cellSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellSelected.png; sourceTree = "<group>"; };
-		8B72265C159A1E01001B28C5 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
-		8B72265D159A1E01001B28C5 /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
-		8B722669159A1E0E001B28C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "EFMNestedTablesExample/Default Images/AppDelegate.h"; sourceTree = "<group>"; };
-		8B72266A159A1E0E001B28C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "EFMNestedTablesExample/Default Images/AppDelegate.m"; sourceTree = "<group>"; };
 		8B72266B159A1E28001B28C5 /* EFMNestedTables-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EFMNestedTables-Info.plist"; path = "EFMNestedTablesExample/EFMNestedTables-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8B72266C159A1E28001B28C5 /* EFMNestedTables-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EFMNestedTables-Prefix.pch"; path = "EFMNestedTablesExample/EFMNestedTables-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		8B72266E159A1E34001B28C5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EFMNestedTablesExample/main.m; sourceTree = SOURCE_ROOT; };
@@ -70,6 +55,18 @@
 		8B8EB7E5156A74B00061CF0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8B8EB7E7156A74B00061CF0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8B8EB7E9156A74B00061CF0C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8BD80F7E159DF576003D7C37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EFMNestedTablesExample/AppDelegate.h; sourceTree = "<group>"; };
+		8BD80F7F159DF576003D7C37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = EFMNestedTablesExample/AppDelegate.m; sourceTree = "<group>"; };
+		8BD80F87159DF659003D7C37 /* blueLedBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedBig.png; sourceTree = "<group>"; };
+		8BD80F88159DF659003D7C37 /* blueLedBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedBig@2x.png"; sourceTree = "<group>"; };
+		8BD80F89159DF659003D7C37 /* blueLedBigOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedBigOff.png; sourceTree = "<group>"; };
+		8BD80F8A159DF659003D7C37 /* blueLedBigOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedBigOff@2x.png"; sourceTree = "<group>"; };
+		8BD80F8B159DF659003D7C37 /* blueLedSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedSmall.png; sourceTree = "<group>"; };
+		8BD80F8C159DF659003D7C37 /* blueLedSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedSmall@2x.png"; sourceTree = "<group>"; };
+		8BD80F8D159DF659003D7C37 /* blueLedSmallOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLedSmallOff.png; sourceTree = "<group>"; };
+		8BD80F8E159DF659003D7C37 /* blueLedSmallOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueLedSmallOff@2x.png"; sourceTree = "<group>"; };
+		8BD80F8F159DF659003D7C37 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		8BD80F90159DF659003D7C37 /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,17 +121,16 @@
 		8B722652159A1E01001B28C5 /* Default Images */ = {
 			isa = PBXGroup;
 			children = (
-				8B722653159A1E01001B28C5 /* blueLedBig.png */,
-				8B722654159A1E01001B28C5 /* blueLedBig@2x.png */,
-				8B722655159A1E01001B28C5 /* blueLedBigOff.png */,
-				8B722656159A1E01001B28C5 /* blueLedBigOff@2x.png */,
-				8B722657159A1E01001B28C5 /* blueLedSmall.png */,
-				8B722658159A1E01001B28C5 /* blueLedSmall@2x.png */,
-				8B722659159A1E01001B28C5 /* blueLedSmallOff.png */,
-				8B72265A159A1E01001B28C5 /* blueLedSmallOff@2x.png */,
-				8B72265B159A1E01001B28C5 /* cellSelected.png */,
-				8B72265C159A1E01001B28C5 /* disclosure.png */,
-				8B72265D159A1E01001B28C5 /* disclosure@2x.png */,
+				8BD80F87159DF659003D7C37 /* blueLedBig.png */,
+				8BD80F88159DF659003D7C37 /* blueLedBig@2x.png */,
+				8BD80F89159DF659003D7C37 /* blueLedBigOff.png */,
+				8BD80F8A159DF659003D7C37 /* blueLedBigOff@2x.png */,
+				8BD80F8B159DF659003D7C37 /* blueLedSmall.png */,
+				8BD80F8C159DF659003D7C37 /* blueLedSmall@2x.png */,
+				8BD80F8D159DF659003D7C37 /* blueLedSmallOff.png */,
+				8BD80F8E159DF659003D7C37 /* blueLedSmallOff@2x.png */,
+				8BD80F8F159DF659003D7C37 /* disclosure.png */,
+				8BD80F90159DF659003D7C37 /* disclosure@2x.png */,
 			);
 			name = "Default Images";
 			path = "EFMNestedTablesExample/Default Images";
@@ -186,8 +182,8 @@
 				8B72263D159A1DE3001B28C5 /* Classes */,
 				8B72264B159A1DF0001B28C5 /* Nibs */,
 				8B722652159A1E01001B28C5 /* Default Images */,
-				8B722669159A1E0E001B28C5 /* AppDelegate.h */,
-				8B72266A159A1E0E001B28C5 /* AppDelegate.m */,
+				8BD80F7E159DF576003D7C37 /* AppDelegate.h */,
+				8BD80F7F159DF576003D7C37 /* AppDelegate.m */,
 				8B720515159B682A006BC732 /* ExampleNestedTablesViewController.h */,
 				8B720516159B682A006BC732 /* ExampleNestedTablesViewController.m */,
 			);
@@ -247,19 +243,17 @@
 				8B72264F159A1DF0001B28C5 /* EFMGroupCell.xib in Resources */,
 				8B722650159A1DF0001B28C5 /* EFMNestedTables.xib in Resources */,
 				8B722651159A1DF0001B28C5 /* EFMSubCell.xib in Resources */,
-				8B72265E159A1E01001B28C5 /* blueLedBig.png in Resources */,
-				8B72265F159A1E01001B28C5 /* blueLedBig@2x.png in Resources */,
-				8B722660159A1E01001B28C5 /* blueLedBigOff.png in Resources */,
-				8B722661159A1E01001B28C5 /* blueLedBigOff@2x.png in Resources */,
-				8B722662159A1E01001B28C5 /* blueLedSmall.png in Resources */,
-				8B722663159A1E01001B28C5 /* blueLedSmall@2x.png in Resources */,
-				8B722664159A1E01001B28C5 /* blueLedSmallOff.png in Resources */,
-				8B722665159A1E01001B28C5 /* blueLedSmallOff@2x.png in Resources */,
-				8B722666159A1E01001B28C5 /* cellSelected.png in Resources */,
-				8B722667159A1E01001B28C5 /* disclosure.png in Resources */,
-				8B722668159A1E01001B28C5 /* disclosure@2x.png in Resources */,
-				8B72266D159A1E30001B28C5 /* InfoPlist.strings in Resources */,
 				8B722673159A1E4B001B28C5 /* InfoPlist.strings in Resources */,
+				8BD80F91159DF659003D7C37 /* blueLedBig.png in Resources */,
+				8BD80F92159DF659003D7C37 /* blueLedBig@2x.png in Resources */,
+				8BD80F93159DF659003D7C37 /* blueLedBigOff.png in Resources */,
+				8BD80F94159DF659003D7C37 /* blueLedBigOff@2x.png in Resources */,
+				8BD80F95159DF659003D7C37 /* blueLedSmall.png in Resources */,
+				8BD80F96159DF659003D7C37 /* blueLedSmall@2x.png in Resources */,
+				8BD80F97159DF659003D7C37 /* blueLedSmallOff.png in Resources */,
+				8BD80F98159DF659003D7C37 /* blueLedSmallOff@2x.png in Resources */,
+				8BD80F99159DF659003D7C37 /* disclosure.png in Resources */,
+				8BD80F9A159DF659003D7C37 /* disclosure@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B722689159A1FFF001B28C5 /* AppDelegate.m in Sources */,
+				8BD80F85159DF5DF003D7C37 /* AppDelegate.m in Sources */,
 				8B722646159A1DE3001B28C5 /* EFMGroupCell.m in Sources */,
 				8B722647159A1DE3001B28C5 /* EFMNestedTables.m in Sources */,
 				8B722648159A1DE3001B28C5 /* EFMSelectableCell.m in Sources */,
@@ -290,14 +284,6 @@
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
-		};
-		8B8EB7EE156A74B00061CF0C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-			);
-			name = InfoPlist.strings;
-			path = /Users/More/Apps/nestedTables/EFMNestedTablesExample/nestedTables;
-			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
