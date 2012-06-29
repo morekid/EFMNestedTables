@@ -240,8 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B72264F159A1DF0001B28C5 /* EFMGroupCell.xib in Resources */,
 				8B722650159A1DF0001B28C5 /* EFMNestedTables.xib in Resources */,
+				8B72264F159A1DF0001B28C5 /* EFMGroupCell.xib in Resources */,
 				8B722651159A1DF0001B28C5 /* EFMSubCell.xib in Resources */,
 				8B722673159A1E4B001B28C5 /* InfoPlist.strings in Resources */,
 				8BD80F91159DF659003D7C37 /* blueLedBig.png in Resources */,
@@ -264,13 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD80F85159DF5DF003D7C37 /* AppDelegate.m in Sources */,
-				8B722646159A1DE3001B28C5 /* EFMGroupCell.m in Sources */,
 				8B722647159A1DE3001B28C5 /* EFMNestedTables.m in Sources */,
 				8B722648159A1DE3001B28C5 /* EFMSelectableCell.m in Sources */,
+				8B722646159A1DE3001B28C5 /* EFMGroupCell.m in Sources */,
 				8B722649159A1DE3001B28C5 /* EFMSubCell.m in Sources */,
-				8B72266F159A1E34001B28C5 /* main.m in Sources */,
+				8BD80F85159DF5DF003D7C37 /* AppDelegate.m in Sources */,
 				8B720517159B682A006BC732 /* ExampleNestedTablesViewController.m in Sources */,
+				8B72266F159A1E34001B28C5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
