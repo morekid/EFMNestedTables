@@ -107,6 +107,10 @@ this is called when the Sub Item state changes, here you can manage behavior acc
 	    }
 	}
 
+
+<br />
+### Other methods
+
 #### - (void) collapsingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath;
 this is called when a Main Item starts collapsing, here you can manage behavior according to this event:
 
