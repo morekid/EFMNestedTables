@@ -189,10 +189,12 @@
     }
     [cell tapTransition];
     
+    BOOL cellTapped;
     switch (subCellsCommand)
     {
         // case parent cell is tapped
         case AllSubCellsCommandChecked:
+            cellTapped = NO;
             if (cell.selectableCellState == Unchecked)
             {
                 [cell check];
@@ -200,6 +202,7 @@
             }
             break;
         case AllSubCellsCommandUnchecked:
+            cellTapped = NO;
             if (cell.selectableCellState == Checked)
             {
                 [cell uncheck];
@@ -209,6 +212,7 @@
         
         // case specific cell is tapped
         default:
+            cellTapped = YES;
             if ([cell toggleCheck])
             {
                 selectedSubCellsAmt++;
@@ -239,7 +243,7 @@
             }
             break;
     }
-    [self.parentTable groupCell:self didSelectSubCell:cell withIndexPath:indexPath];
+    [self.parentTable groupCell:self didSelectSubCell:cell withIndexPath:indexPath andWithTap:cellTapped];
 }
 
 @end

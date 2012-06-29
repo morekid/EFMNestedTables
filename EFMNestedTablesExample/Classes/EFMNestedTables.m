@@ -82,18 +82,26 @@
     NSLog(@"\n Oops! You didn't specify a behavior for this Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
 }
 
-- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
+- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
 {
     // sample Item behavior management code
     /*switch (state) {
-         case Checked:
-            // do stuff
-         break;
-         case Unchecked:
-            // do stuff
-         break;
-         default:
-         break;
+        case Checked:
+            if (tapped) {
+                // do stuff
+            } else {
+                // do stuff
+            }
+            break;
+        case Unchecked:
+            if (tapped) {
+                // do stuff
+            } else {
+                // do stuff
+            }
+            break;
+        default:
+            break;
     }*/
     NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
 }
@@ -221,7 +229,7 @@
 
 #pragma mark - Nested Tables events
 
-- (void) groupCell:(EFMGroupCell *)cell didSelectSubCell:(EFMSelectableCell *)subCell withIndexPath:(NSIndexPath *)indexPath
+- (void) groupCell:(EFMGroupCell *)cell didSelectSubCell:(EFMSelectableCell *)subCell withIndexPath:(NSIndexPath *)indexPath andWithTap:(BOOL)tapped
 {
     NSIndexPath *groupCellIndexPath = [self.tableView indexPathForCell:cell];
     NSNumber *cellStateNumber = [NSNumber numberWithInt:cell.selectableCellState];
@@ -241,7 +249,7 @@
     
     [cell setSelectableSubCellsState: [selectableSubCellsState objectForKey:groupCellIndexPath]];
     
-    [self item:cell hasSetSubItem:subCell withIndexPath:indexPath toState:subCell.selectableCellState];
+    [self item:cell hasSetSubItem:subCell withIndexPath:indexPath toState:subCell.selectableCellState andWithTap:tapped];
 }
 
 - (void) collapsableButtonTapped: (UIControl *) button withEvent: (UIEvent *) event

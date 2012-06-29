@@ -76,21 +76,27 @@
     }
 }
 
-- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
+- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
 {
     switch (state) {
         case Checked:
-            NSLog(@"Changed Sub Item at indexPath:%@ to state \"Checked\"", indexPath);
+            if (tapped) {
+                NSLog(@"Changed Sub Item at indexPath:%@ to state \"Checked\"", indexPath);
+            } else {
+                NSLog(@"Passively changed Sub Item at indexPath:%@ to state \"Checked\"", indexPath);
+            }
         break;
         case Unchecked:
-            NSLog(@"Changed Sub Item at indexPath:%@ to state \"Unchecked\"", indexPath);
+            if (tapped) {
+                NSLog(@"Changed Sub Item at indexPath:%@ to state \"Unchecked\"", indexPath);
+            } else {
+                NSLog(@"Passively changed Sub Item at indexPath:%@ to state \"Unchecked\"", indexPath);
+            }
         break;
         default:
         break;
     }
 }
-
-
 
 - (void)expandingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath
 {
