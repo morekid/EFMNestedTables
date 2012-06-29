@@ -68,8 +68,8 @@
 
 - (void) item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem
 {
-    SelectableCellState state = item.selectableCellState;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
+    SelectableCellState state = subItem.selectableCellState;
+    NSIndexPath *indexPath = [item.subTable indexPathForCell:subItem];
     switch (state) {
         case Checked:
             NSLog(@"Changed Sub Item at indexPath:%@ to state \"Checked\"", indexPath);

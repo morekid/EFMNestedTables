@@ -26,7 +26,7 @@
 }
 
 - (void) mainItemDidChange: (EFMGroupCell *)item forTap:(BOOL)tapped;
-- (void) subItemDidChange: (EFMSelectableCell *)subItem forTap:(BOOL)tapped;
+- (void) mainItem:(EFMGroupCell *)item subItemDidChange: (EFMSelectableCell *)subItem forTap:(BOOL)tapped;
 
 #pragma mark - To be implemented in subclasses
 

@@ -104,11 +104,11 @@
     }
 }
 
-- (void) subItemDidChange: (EFMSelectableCell *)subItem forTap:(BOOL)tapped
+- (void) mainItem:(EFMGroupCell *)item subItemDidChange: (EFMSelectableCell *)subItem forTap:(BOOL)tapped
 {
     if(delegate != nil && [delegate respondsToSelector:@selector(item:subItemDidChange:)] )
     {
-        [delegate performSelector:@selector(item:subItemDidChange:) withObject:subItem withObject:subItem];
+        [delegate performSelector:@selector(item:subItemDidChange:) withObject:item withObject:subItem];
     }
 }
 
@@ -245,7 +245,7 @@
     
     [cell setSelectableSubCellsState: [selectableSubCellsState objectForKey:groupCellIndexPath]];
     
-    [self subItemDidChange:subCell forTap:tapped];
+    [self mainItem:cell subItemDidChange:subCell forTap:tapped];
 }
 
 - (void) collapsableButtonTapped: (UIControl *) button withEvent: (UIEvent *) event
