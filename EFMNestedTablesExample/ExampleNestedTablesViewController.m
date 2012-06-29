@@ -78,4 +78,16 @@
     }
 }
 
+
+
+- (void)expandingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Expanded Item at indexPath: %@", indexPath);
+}
+
+- (void)collapsingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath 
+{
+    NSLog(@"Collapsed Item at indexPath: %@", indexPath);
+}
+
 @end

@@ -30,6 +30,8 @@
 - (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state;
 - (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state;
 
+- (void) collapsingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath;
+- (void) expandingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath;
 
 #pragma mark - Internal
 

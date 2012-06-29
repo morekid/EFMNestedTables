@@ -83,6 +83,16 @@
     NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
 }
 
+- (void)expandingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+- (void)collapsingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath 
+{
+    
+}
+
 #pragma mark - Class lifecycle
 
 - (void)viewDidLoad
@@ -225,6 +235,13 @@
     NSIndexPath * indexPath = [tableView indexPathForRowAtPoint: [[[event touchesForView: button] anyObject] locationInView: tableView]];
     if ( indexPath == nil )
         return;
+    
+    if ([[expandedIndexes objectForKey:indexPath] boolValue]) {
+        [self collapsingItem:(EFMGroupCell *)[tableView cellForRowAtIndexPath:indexPath] withIndexPath:indexPath];
+    } else {
+        [self expandingItem:(EFMGroupCell *)[tableView cellForRowAtIndexPath:indexPath] withIndexPath:indexPath];
+    }
+    
     // reset cell expanded state in array
 	BOOL isExpanded = ![[expandedIndexes objectForKey:indexPath] boolValue];
 	NSNumber *expandedIndex = [NSNumber numberWithBool:isExpanded];
