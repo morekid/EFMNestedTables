@@ -16,7 +16,7 @@
 
 - (id) init
 {
-    if (self = [super initWithNibName:@"EFMNestedTables" bundle:nil])
+    if (self = [super initWithNibName:@"EFMNestedTable" bundle:nil])
     {
         // do init stuff
     }
@@ -47,54 +47,50 @@
     return subItem;
 }
 
-- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
+- (void) mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item
 {
+    SelectableCellState state = item.selectableCellState;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
     switch (state) {
         case Checked:
-            if (tapped) {
-                NSLog(@"Changed Item at indexPath:%@ to state \"Checked\"", indexPath);
-            } else {
-                NSLog(@"Passively changed Item at indexPath:%@ to state \"Checked\"", indexPath);
-            }
+//            if (tapped) {
+//                NSLog(@"Changed Item at indexPath:%@ to state \"Checked\"", indexPath);
+//            } else {
+//                NSLog(@"Passively changed Item at indexPath:%@ to state \"Checked\"", indexPath);
+//            }
             break;
         case Unchecked:
-            if (tapped) {
-                NSLog(@"Changed Item at indexPath:%@ to state \"Unchecked\"", indexPath);
-            } else {
-                NSLog(@"Passively changed Item at indexPath:%@ to state \"Unchecked\"", indexPath);
-            }
+//            if (tapped) {
+//                NSLog(@"Changed Item at indexPath:%@ to state \"Unchecked\"", indexPath);
+//            } else {
+//                NSLog(@"Passively changed Item at indexPath:%@ to state \"Unchecked\"", indexPath);
+//            }
             break;
         case Halfchecked:
-            if (tapped) {
-                NSLog(@"Changed Item at indexPath:%@ to state \"Halfchecked\"", indexPath);
-            } else {
-                NSLog(@"Passively changed Item at indexPath:%@ to state \"Halfchecked\"", indexPath);
-            }
+//            if (tapped) {
+//                NSLog(@"Changed Item at indexPath:%@ to state \"Halfchecked\"", indexPath);
+//            } else {
+//                NSLog(@"Passively changed Item at indexPath:%@ to state \"Halfchecked\"", indexPath);
+//            }
             break;
         default:
-        break;
+            break;
     }
 }
 
-- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
+- (void) item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem
 {
+    SelectableCellState state = item.selectableCellState;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
     switch (state) {
         case Checked:
-            if (tapped) {
-                NSLog(@"Changed Sub Item at indexPath:%@ to state \"Checked\"", indexPath);
-            } else {
-                NSLog(@"Passively changed Sub Item at indexPath:%@ to state \"Checked\"", indexPath);
-            }
-        break;
+            NSLog(@"Changed Sub Item at indexPath:%@ to state \"Checked\"", indexPath);
+            break;
         case Unchecked:
-            if (tapped) {
-                NSLog(@"Changed Sub Item at indexPath:%@ to state \"Unchecked\"", indexPath);
-            } else {
-                NSLog(@"Passively changed Sub Item at indexPath:%@ to state \"Unchecked\"", indexPath);
-            }
-        break;
+            NSLog(@"Changed Sub Item at indexPath:%@ to state \"Unchecked\"", indexPath);
+            break;
         default:
-        break;
+            break;
     }
 }
 

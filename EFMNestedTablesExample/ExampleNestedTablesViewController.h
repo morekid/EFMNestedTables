@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Daniele De Matteis. All rights reserved.
 //
 
-#import "EFMNestedTables.h"
+#import "EFMNestedTable.h"
 
-@interface ExampleNestedTablesViewController : EFMNestedTables
+@interface ExampleNestedTablesViewController : EFMNestedTable
 
 @end

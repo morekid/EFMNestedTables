@@ -8,7 +8,7 @@
 
 #import "EFMGroupCell.h"
 #import <QuartzCore/QuartzCore.h>
-#import "EFMNestedTables.h"
+#import "EFMNestedTable.h"
 
 @implementation EFMGroupCell
 
@@ -219,12 +219,12 @@
                 if (selectedSubCellsAmt == subCellsAmt && self.selectableCellState != Checked)
                 {
                     [self check];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
+                    [self.parentTable mainItemDidChange:self];
                 }
                 else if (selectedSubCellsAmt != subCellsAmt && selectedSubCellsAmt > 0 && self.selectableCellState != Halfchecked)
                 {
                     [self halfCheck];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
+                    [self.parentTable mainItemDidChange:self];
                 }
             }
             else
@@ -233,12 +233,12 @@
                 if (selectedSubCellsAmt == 0 && self.selectableCellState != Unchecked)
                 {
                     [self uncheck];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
+                    [self.parentTable mainItemDidChange:self];
                 }
                 else if (self.selectableCellState != Halfchecked)
                 {
                     [self halfCheck];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
+                    [self.parentTable mainItemDidChange:self];
                 }
             }
             break;

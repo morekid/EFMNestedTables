@@ -13,16 +13,7 @@ Obj-C module built on UITableView for creating a 2-level nested list UI control,
 How To:
 -------
 
-Create a subclass of EFMNestedTables and use the following initialization code:
-
-	- (id) init
-	{
-	    if (self = [super initWithNibName:@"EFMNestedTables" bundle:nil])
-	    {
-	        // do init stuff
-	    }
-	    return self;
-	}
+Create a subclass of EFMNestedTable. You can call either init or initWithNibName:bundle:. Calling init will call initWithNibName:@"EFMNestedTable" bundle:nil. 
 
 Then implement the following convenience methods:
 
@@ -70,14 +61,17 @@ here you can set the Sub Item's cell attributes:
 
 
 <br />
-### Callbacks
+### Delegate methods
 
+EFMNestedTable implements the EFMNestedTableDelegate protocol, however you are free to implement the following methods yourself if they will provide useful information.
 
-#### - (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped;
+#### mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item;
 this is called when the Item state changes, here you can manage behavior according to the Item state:
 
-	- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
+	- (void) mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item
 	{
+		SelectableCellState state = item.selectableCellState;
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
 	    switch (state) {
 	        case Checked:
 	            if (tapped) {
@@ -106,11 +100,13 @@ this is called when the Item state changes, here you can manage behavior accordi
 	}
 	
 
-#### - (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped;
+#### item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem;
 this is called when the Sub Item state changes, here you can manage behavior according to the Sub Item state:
 
 	- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
 	{
+		SelectableCellState state = item.selectableCellState;
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
 	    switch (state) {
 	        case Checked:
 	            if (tapped) {
@@ -130,7 +126,6 @@ this is called when the Sub Item state changes, here you can manage behavior acc
 	        break;
 	    }
 	}
-
 
 #### - (void) collapsingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath;
 this is called when a Main Item starts collapsing, here you can manage behavior according to this event:
@@ -180,3 +175,12 @@ BOOL isExpanded
 	
 	item.isExpanded
 
+
+Roadmap/Feature Ideas
+-------
+
+Can't use custom classes cleanly in place of the default cells
+
+Cell heights are tightly coupled to default classes
+
+Provide more delegate methods

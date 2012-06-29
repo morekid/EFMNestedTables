@@ -1,20 +1,39 @@
 //
-//  EFMNestedTables.m
+//  EFMNestedTable.m
 //  EFMNestedTablesExample
 //
 //  Created by Daniele De Matteis on 21/05/2012.
 //  Copyright (c) 2012 Daniele De Matteis. All rights reserved.
 //
 
-#import "EFMNestedTables.h"
+#import "EFMNestedTable.h"
 
-@interface EFMNestedTables ()
+@interface EFMNestedTable ()
 
 @end
 
-@implementation EFMNestedTables
+@implementation EFMNestedTable
 
 @synthesize mainItemsAmt, subItemsAmt, groupCell;
+@synthesize delegate;
+
+- (id) init
+{
+    if (self = [self initWithNibName:@"EFMNestedTable" bundle:nil])
+    {
+    }
+    return self;
+}
+
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
+    {
+        self.delegate = self;
+    }
+    
+    return self;
+}
 
 #pragma mark - To be implemented in sublclasses
 
@@ -32,9 +51,6 @@
 
 - (EFMGroupCell *)mainTable:(UITableView *)mainTable setItem:(EFMGroupCell *)item forRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    // customizable attributes:
-    // UILabel itemText
-    
     if (indexPath.row == 0)
     {
         NSLog(@"\n Oops! Item cells in the Main tableview are not configured \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
@@ -51,61 +67,6 @@
     return subItem;
 }
 
-- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
-{
-    // sample Item behavior management code
-    /*switch (state) {
-        case Checked:
-            if (tapped) {
-                // do stuff
-            } else {
-                // do stuff
-            }
-            break;
-        case Unchecked:
-            if (tapped) {
-                // do stuff
-            } else {
-                // do stuff
-            }
-            break;
-        case Halfchecked:
-            if (tapped) {
-                // do stuff
-            } else {
-                // do stuff
-            }
-            break;
-        default:
-            break;
-    }*/
-    NSLog(@"\n Oops! You didn't specify a behavior for this Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
-}
-
-- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
-{
-    // sample Item behavior management code
-    /*switch (state) {
-        case Checked:
-            if (tapped) {
-                // do stuff
-            } else {
-                // do stuff
-            }
-            break;
-        case Unchecked:
-            if (tapped) {
-                // do stuff
-            } else {
-                // do stuff
-            }
-            break;
-        default:
-            break;
-    }*/
-    NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
-}
-
 - (void)expandingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -113,7 +74,42 @@
 
 - (void)collapsingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath 
 {
+
+}
     
+// Optional method to implement. Will be called when creating a new main cell to return the nib name you want to use
+
+- (NSString *) nibNameForMainCell
+{
+    return @"EFMGroupCell";
+}
+
+#pragma mark - Delegate methods
+
+- (void) mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item
+{
+    NSLog(@"\n Oops! You didn't specify a behavior for this Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
+}
+
+- (void) item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem
+{
+    NSLog(@"\n Oops! You didn't specify a behavior for this Sub Item \n Please implement \"%@\" in your EFMNestedTables subclass.", NSStringFromSelector(_cmd));
+}
+
+- (void) mainItemDidChange: (EFMGroupCell *)item
+{
+    if(delegate != nil && [delegate respondsToSelector:@selector(mainTable:itemDidChange:)] )
+    {
+        [delegate performSelector:@selector(mainTable:itemDidChange:) withObject:self.tableView withObject:item];
+    }
+}
+
+- (void) subItemDidChange: (EFMSelectableCell *)subItem
+{
+    if(delegate != nil && [delegate respondsToSelector:@selector(item:subItemDidChange:)] )
+    {
+        [delegate performSelector:@selector(item:subItemDidChange:) withObject:subItem withObject:subItem];
+    }
 }
 
 #pragma mark - Class lifecycle
@@ -149,7 +145,7 @@
     
     if (cell == nil)
     {
-        [[NSBundle mainBundle] loadNibNamed:@"EFMGroupCell" owner:self options:nil];
+        [[NSBundle mainBundle] loadNibNamed:[self nibNameForMainCell] owner:self options:nil];
         cell = groupCell;
         self.groupCell = nil;
     }
@@ -224,7 +220,7 @@
     
     [cell subCellsToggleCheck];
     
-    [self mainTable:tableView hasSetItem:cell withIndexPath:indexPath toState:cellState andWithTap:YES];
+    [self mainItemDidChange:cell];
 }
 
 #pragma mark - Nested Tables events
@@ -249,7 +245,7 @@
     
     [cell setSelectableSubCellsState: [selectableSubCellsState objectForKey:groupCellIndexPath]];
     
-    [self item:cell hasSetSubItem:subCell withIndexPath:indexPath toState:subCell.selectableCellState andWithTap:tapped];
+    [self subItemDidChange:subCell];
 }
 
 - (void) collapsableButtonTapped: (UIControl *) button withEvent: (UIEvent *) event

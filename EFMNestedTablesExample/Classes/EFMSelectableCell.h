@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class EFMNestedTables;
+@class EFMNestedTable;
 
 typedef enum
 {
@@ -30,7 +30,7 @@ SelectableCellState;
 
 @property (nonatomic) IBOutlet UILabel *itemText;
 
-@property (nonatomic, assign) EFMNestedTables *parentTable;
+@property (nonatomic, assign) EFMNestedTable *parentTable;
 @property (nonatomic) SelectableCellState selectableCellState;
 
 - (SelectableCellState) toggleCheck;

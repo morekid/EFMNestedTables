@@ -11,13 +11,22 @@
 #import "EFMGroupCell.h"
 #import "EFMSubCell.h"
 
-@interface EFMNestedTables : UITableViewController
+@protocol EFMNestedTableDelegate<NSObject>
+
+- (void) mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item;
+- (void) item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem;
+
+@end
+
+@interface EFMNestedTable : UITableViewController<EFMNestedTableDelegate>
 {
 	NSMutableDictionary *expandedIndexes;
     NSMutableDictionary *selectableCellsState;
     NSMutableDictionary *selectableSubCellsState;
 }
 
+- (void) mainItemDidChange: (EFMGroupCell *)item;
+- (void) subItemDidChange: (EFMSelectableCell *)subItem;
 
 #pragma mark - To be implemented in subclasses
 
@@ -27,17 +36,16 @@
 - (EFMGroupCell *) mainTable:(UITableView *)mainTable setItem:(EFMGroupCell *)item forRowAtIndexPath:(NSIndexPath *)indexPath;
 - (EFMSubCell *) item:(EFMGroupCell *)item setSubItem:(EFMSubCell *)subItem forRowAtIndexPath:(NSIndexPath *)indexPath;
 
-- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped;
-- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped;
-
 - (void) collapsingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath;
 - (void) expandingItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath;
 
+- (NSString *) nibNameForMainCell;
 
 #pragma mark - Internal
 
 @property (assign) int mainItemsAmt;
 @property (strong) NSMutableDictionary *subItemsAmt;
+@property (assign) id<EFMNestedTableDelegate> delegate;
 
 @property (assign) IBOutlet EFMGroupCell *groupCell;
 
