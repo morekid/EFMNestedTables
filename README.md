@@ -153,6 +153,7 @@ this is called when a Main Item starts expanding, here you can manage behavior a
 
 ### Table Items properties
 
+
 #### Main Items & Sub Items
 
 EFMNestedTables *parentTable
@@ -161,10 +162,21 @@ SelectableCellState selectableCellState
 
 UILabel *itemText
 
+
 #### Main Items Only
 
 UITableView *subTable
 
 BOOL isExpanded
 
+
+	item.parentTable
+	
+	item.selectableCellState
+	
+	item.itemText
+	
+	item.subTable
+	
+	item.isExpanded
 
