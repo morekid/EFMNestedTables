@@ -130,6 +130,7 @@ this is called when a Main Item starts expanding, here you can manage behavior a
 
 
 
+<br />
 ### Table Items properties
 
 
