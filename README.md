@@ -74,25 +74,13 @@ this is called when the Item state changes, here you can manage behavior accordi
 		NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
 	    switch (state) {
 	        case Checked:
-	            if (tapped) {
-	            	// do stuff
-	            } else {
-	            	// do stuff
-	            }
+	        	// do stuff
 	            break;
 	        case Unchecked:
-	            if (tapped) {
-	            	// do stuff
-	            } else {
-	            	// do stuff
-	            }
+	        	// do stuff
 	            break;
 	        case Halfchecked:
-	            if (tapped) {
-	            	// do stuff
-	            } else {
-	            	// do stuff
-	            }
+	        	// do stuff
 	            break;
 	        default:
 	        break;
@@ -109,18 +97,10 @@ this is called when the Sub Item state changes, here you can manage behavior acc
 		NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
 	    switch (state) {
 	        case Checked:
-	            if (tapped) {
-		            // do stuff
-	            } else {
-		            // do stuff
-	            }
+	        	// do stuff
 	        break;
 	        case Unchecked:
-	            if (tapped) {
-		            // do stuff
-	            } else {
-		            // do stuff
-	            }
+	        	// do stuff
 	        break;
 	        default:
 	        break;

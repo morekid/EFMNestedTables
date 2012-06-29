@@ -53,25 +53,13 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
     switch (state) {
         case Checked:
-//            if (tapped) {
-//                NSLog(@"Changed Item at indexPath:%@ to state \"Checked\"", indexPath);
-//            } else {
-//                NSLog(@"Passively changed Item at indexPath:%@ to state \"Checked\"", indexPath);
-//            }
+            NSLog(@"Changed Item at indexPath:%@ to state \"Checked\"", indexPath);
             break;
         case Unchecked:
-//            if (tapped) {
-//                NSLog(@"Changed Item at indexPath:%@ to state \"Unchecked\"", indexPath);
-//            } else {
-//                NSLog(@"Passively changed Item at indexPath:%@ to state \"Unchecked\"", indexPath);
-//            }
+            NSLog(@"Changed Item at indexPath:%@ to state \"Unchecked\"", indexPath);
             break;
         case Halfchecked:
-//            if (tapped) {
-//                NSLog(@"Changed Item at indexPath:%@ to state \"Halfchecked\"", indexPath);
-//            } else {
-//                NSLog(@"Passively changed Item at indexPath:%@ to state \"Halfchecked\"", indexPath);
-//            }
+            NSLog(@"Changed Item at indexPath:%@ to state \"Halfchecked\"", indexPath);
             break;
         default:
             break;
