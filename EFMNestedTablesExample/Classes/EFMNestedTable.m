@@ -245,7 +245,7 @@
     
     [cell setSelectableSubCellsState: [selectableSubCellsState objectForKey:groupCellIndexPath]];
     
-    [self subItemDidChange:subCell];
+    [self subItemDidChange:subCell forTap:tapped];
 }
 
 - (void) collapsableButtonTapped: (UIControl *) button withEvent: (UIEvent *) event

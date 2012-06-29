@@ -28,7 +28,7 @@ here you can set the amount of Items in your Main table:
 
 	- (NSInteger)mainTable:(UITableView *)mainTable numberOfItemsInSection:(NSInteger)section
 	{
-	    return 15;
+	    return 15; // amount of Main Items
 	}
 
 #### - (NSInteger) mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)item atIndexPath:(NSIndexPath *)indexPath;
@@ -36,7 +36,7 @@ here you can set the amount of Sub Items for each Item in the Main table:
 
 	- (NSInteger)mainTable:(UITableView *)mainTable numberOfSubItemsforItem:(EFMGroupCell *)item atIndexPath:(NSIndexPath *)indexPath
 	{
-	    return 3; 
+	    return 3; // amount of Sub Items for each Main Item
 	}
 
 
@@ -65,7 +65,7 @@ here you can set the Sub Item's cell attributes:
 
 EFMNestedTable implements the EFMNestedTableDelegate protocol, however you are free to implement the following methods yourself if they will provide useful information.
 
-#### mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item;
+#### - mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item;
 this is called when the Item state changes, here you can manage behavior according to the Item state:
 
 	- (void) mainTable:(UITableView *)mainTable itemDidChange:(EFMGroupCell *)item
@@ -100,10 +100,10 @@ this is called when the Item state changes, here you can manage behavior accordi
 	}
 	
 
-#### item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem;
+#### - item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem;
 this is called when the Sub Item state changes, here you can manage behavior according to the Sub Item state:
 
-	- (void) item:(EFMGroupCell *)item hasSetSubItem:(EFMSelectableCell *)subItem withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
+	- item:(EFMGroupCell *)item subItemDidChange:(EFMSelectableCell *)subItem;
 	{
 		SelectableCellState state = item.selectableCellState;
 		NSIndexPath *indexPath = [self.tableView indexPathForCell:item];
@@ -184,3 +184,5 @@ Can't use custom classes cleanly in place of the default cells
 Cell heights are tightly coupled to default classes
 
 Provide more delegate methods
+
+Pass "tapped" event info to the delegate methods in order to know if the Item changed state passively or actively
