@@ -215,12 +215,12 @@
                 if (selectedSubCellsAmt == subCellsAmt && self.selectableCellState != Checked)
                 {
                     [self check];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
                 }
                 else if (selectedSubCellsAmt != subCellsAmt && selectedSubCellsAmt > 0 && self.selectableCellState != Halfchecked)
                 {
                     [self halfCheck];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
                 }
             }
             else
@@ -229,12 +229,12 @@
                 if (selectedSubCellsAmt == 0 && self.selectableCellState != Unchecked)
                 {
                     [self uncheck];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
                 }
                 else if (self.selectableCellState != Halfchecked)
                 {
                     [self halfCheck];
-                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState];
+                    [self.parentTable mainTable:self.parentTable.tableView hasSetItem:self withIndexPath:[self.parentTable.tableView indexPathForCell:self] toState:self.selectableCellState andWithTap:NO];
                 }
             }
             break;

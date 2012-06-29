@@ -51,15 +51,30 @@
     return subItem;
 }
 
-- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state
+- (void) mainTable:(UITableView *)mainTable hasSetItem:(EFMGroupCell *)item withIndexPath:(NSIndexPath *)indexPath toState:(SelectableCellState)state andWithTap:(BOOL)tapped
 {
     // sample Item behavior management code
     /*switch (state) {
         case Checked:
-            // do stuff
+            if (tapped) {
+                // do stuff
+            } else {
+                // do stuff
+            }
             break;
         case Unchecked:
-            // do stuff
+            if (tapped) {
+                // do stuff
+            } else {
+                // do stuff
+            }
+            break;
+        case Halfchecked:
+            if (tapped) {
+                // do stuff
+            } else {
+                // do stuff
+            }
             break;
         default:
             break;
@@ -201,7 +216,7 @@
     
     [cell subCellsToggleCheck];
     
-    [self mainTable:tableView hasSetItem:cell withIndexPath:indexPath toState:cellState];
+    [self mainTable:tableView hasSetItem:cell withIndexPath:indexPath toState:cellState andWithTap:YES];
 }
 
 #pragma mark - Nested Tables events
